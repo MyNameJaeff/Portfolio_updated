@@ -1,0 +1,342 @@
+{
+    "personal": {
+        "name": "Fredrik Andersson",
+        "title": "Fullstack Developer",
+        "tagline": "Crafting elegant digital experiences with modern web technologies. Passionate about clean code, innovative solutions, and continuous learning.",
+        "location": "Stockholm, Sweden",
+        "email": "fredrik04@hotmail.com",
+        "phone": "+46 123 456 789",
+        "bio": "Hi! I'm Fredrik, a fullstack developer based in Stockholm, Sweden. I specialize in creating elegant, performant web applications that solve real-world problems. My journey in software development started with a fascination for how things work under the hood. Today, I combine that curiosity with practical experience in modern web technologies to build solutions that users love.",
+        "availability": "Open to opportunities",
+        "social": {
+            "github": "https://github.com/MyNameJaeff",
+            "linkedin": "https://www.linkedin.com/in/fredrik-andersson-2006412aa/?locale=en_US",
+            "email": "mailto:fredrik04@hotmail.com"
+        }
+    },
+    "skills": {
+        "frontend": {
+            "title": "Frontend",
+            "icon": "Code2",
+            "color": "from-blue-500 to-cyan-500",
+            "skills": [
+                "React",
+                "Next.js",
+                "TypeScript",
+                "Tailwind CSS",
+                "HTML",
+                "CSS",
+                "JavaScript"
+            ]
+        },
+        "backend": {
+            "title": "Backend",
+            "icon": "Database",
+            "color": "from-green-500 to-emerald-500",
+            "skills": [
+                "C#",
+                "Rust",
+                "PostgreSQL",
+                "Node.js",
+                "Express",
+                "PHP",
+                "MySQL",
+                "Azure",
+                "Firebase"
+            ]
+        },
+        "devops": {
+            "title": "DevOps",
+            "icon": "Cloud",
+            "color": "from-purple-500 to-pink-500",
+            "skills": [
+                "Docker",
+                "CI/CD",
+                "Git"
+            ]
+        },
+        "tools": {
+            "title": "Tools",
+            "icon": "Wrench",
+            "color": "from-orange-500 to-red-500",
+            "skills": [
+                "VS Code",
+                "Visual Studio",
+                "Figma",
+                "Postman",
+                "GitHub"
+            ]
+        },
+        "softSkills": {
+            "title": "Soft Skills",
+            "icon": "Users",
+            "color": "from-indigo-500 to-purple-500",
+            "skills": [
+                "Problem Solving",
+                "Team Work",
+                "Communication",
+                "Working in a Team",
+                "Working Independently",
+                "Agile"
+            ]
+        },
+        "languages": {
+            "title": "Languages",
+            "icon": "Languages",
+            "color": "from-yellow-500 to-amber-500",
+            "skills": [
+                "JavaScript",
+                "TypeScript",
+                "Rust",
+                "SQL",
+                "C#",
+                "HTML",
+                "CSS",
+                "PHP"
+            ]
+        }
+    },
+    "experience": [
+        {
+            "title": "Fullstack Developer",
+            "company": "Aveno CRM",
+            "period": "2024 - Present",
+            "location": "Stockholm, Sweden",
+            "description": "Building a comprehensive CRM and project management platform using React, Rust, and PostgreSQL. Leading frontend development and contributing to backend architecture.",
+            "responsibilities": [
+                "Led frontend development using React and TypeScript",
+                "Contributed to backend architecture with Rust",
+                "Implemented real-time features and data synchronization",
+                "Collaborated with cross-functional teams",
+                "Optimized application performance and scalability"
+            ],
+            "skills": [
+                "React",
+                "Rust",
+                "PostgreSQL",
+                "Tailwind CSS"
+            ]
+        },
+        {
+            "title": "E-Commerce Developer",
+            "company": "BAMF Platform",
+            "period": "2023 - 2024",
+            "location": "Stockholm, Sweden",
+            "description": "Developed a modern e-commerce platform with intuitive inventory management and seamless user experience using C# and TypeScript.",
+            "responsibilities": [
+                "Developed full-stack e-commerce solution",
+                "Implemented inventory management system",
+                "Created responsive user interfaces",
+                "Integrated payment processing systems",
+                "Optimized database queries and performance"
+            ],
+            "skills": [
+                "C#",
+                "TypeScript",
+                "React",
+                "Tailwind CSS"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "degree": "Software Development",
+            "institution": "Technical University / Bootcamp",
+            "period": "2021 - 2023",
+            "location": "Stockholm, Sweden",
+            "description": "Focused on full-stack web development, computer science fundamentals, and modern software engineering practices."
+        }
+    ],
+    "values": [
+        {
+            "icon": "Code2",
+            "title": "Clean Code",
+            "description": "Writing maintainable, well-documented code that stands the test of time"
+        },
+        {
+            "icon": "Lightbulb",
+            "title": "Innovation",
+            "description": "Constantly exploring new technologies and approaches to solve problems"
+        },
+        {
+            "icon": "Target",
+            "title": "User-Focused",
+            "description": "Creating solutions that prioritize user experience and accessibility"
+        },
+        {
+            "icon": "Users",
+            "title": "Collaboration",
+            "description": "Building strong relationships and working effectively in diverse teams"
+        }
+    ],
+    "projects": [
+        {
+            "id": "aveno",
+            "title": "'Aveno' a CRM and project management platform",
+            "shortDescription": "A comprehensive CRM and project management solution designed to streamline business operations, enhance customer relationships, and improve team collaboration.",
+            "description": "A comprehensive CRM and project management solution designed to streamline business operations, enhance customer relationships, and improve team collaboration. Features include project tracking, customer management, team collaboration tools, and detailed analytics.",
+            "longDescription": "Aveno is a full-featured CRM system built with modern technologies. It provides businesses with tools to manage customer relationships, track projects, collaborate with teams, and analyze business metrics. The platform features a responsive design, real-time updates, and integrations with popular business tools.",
+            "tags": [
+                "React",
+                "Tailwind CSS",
+                "Rust",
+                "PostgreSQL"
+            ],
+            "category": "Enterprise",
+            "image": "/projectImages/Aveno.png",
+            "link": "https://aveno.se/",
+            "linkedIn": "https://www.linkedin.com/company/aveno-crm/",
+            "features": [
+                "Customer relationship management",
+                "Project tracking and management",
+                "Team collaboration tools",
+                "Analytics and reporting",
+                "API integrations"
+            ],
+            "featured": true
+        },
+        {
+            "id": "bamf",
+            "title": "'BAMF' an E-Commerce Platform",
+            "shortDescription": "A modern e-commerce platform with easy inventory management, intuitive interface, modern design, and seamless user experience.",
+            "description": "A modern e-commerce platform with easy inventory management, intuitive interface, modern design, and seamless user experience. Built with a focus on performance and scalability.",
+            "longDescription": "BAMF is a cutting-edge e-commerce solution that combines elegant design with powerful functionality. The platform supports product management, order processing, payment integration, and customer analytics, all wrapped in a user-friendly interface.",
+            "tags": [
+                "C#",
+                "TypeScript",
+                "React",
+                "Tailwind CSS"
+            ],
+            "category": "E-Commerce",
+            "image": "/projectImages/BAMF.png",
+            "github": "https://github.com/BAMF-1",
+            "features": [
+                "Product catalog management",
+                "Shopping cart and checkout",
+                "Order tracking",
+                "Inventory management",
+                "Payment processing"
+            ],
+            "featured": true
+        },
+        {
+            "id": "task-management",
+            "title": "Task Management System",
+            "shortDescription": "Collaborative project management tool with Kanban boards, time tracking, and team analytics.",
+            "description": "Collaborative project management tool with Kanban boards, time tracking, and team analytics. Designed for agile teams to streamline their workflow and improve productivity.",
+            "longDescription": "A comprehensive task management solution that helps teams organize, track, and complete their work efficiently. Features include customizable Kanban boards, time tracking, sprint planning, and detailed analytics to help teams improve their processes.",
+            "tags": [
+                "Next.js",
+                "Rust",
+                "PostgreSQL"
+            ],
+            "category": "Productivity",
+            "image": "/projectImages/placeholder.jpg",
+            "link": "#",
+            "github": "#",
+            "features": [
+                "Kanban board interface",
+                "Time tracking",
+                "Sprint planning",
+                "Team analytics",
+                "Custom workflows"
+            ],
+            "featured": true
+        },
+        {
+            "id": "portfolio-generator",
+            "title": "Portfolio Generator",
+            "shortDescription": "AI-powered tool that generates professional portfolio websites from user data and preferences.",
+            "description": "AI-powered tool that generates professional portfolio websites from user data and preferences. Automatically creates responsive, modern designs tailored to individual needs.",
+            "longDescription": "An innovative tool that leverages AI to create personalized portfolio websites. Users input their information and preferences, and the system generates a complete, customizable website with modern design patterns and best practices built in.",
+            "tags": [
+                "TypeScript",
+                "C#",
+                "Tailwind"
+            ],
+            "category": "Tools",
+            "image": "/projectImages/placeholder.jpg",
+            "link": "#",
+            "github": "#",
+            "features": [
+                "AI-powered design generation",
+                "Customizable templates",
+                "Responsive layouts",
+                "SEO optimization",
+                "Export functionality"
+            ],
+            "featured": true
+        },
+        {
+            "id": "chat-app",
+            "title": "Real-time Chat Application",
+            "shortDescription": "Modern messaging platform with WebSocket support, file sharing, and group chats.",
+            "description": "Modern messaging platform with WebSocket support, file sharing, and group chats. Built for speed and reliability with end-to-end encryption.",
+            "longDescription": "A secure, real-time messaging application that supports individual and group conversations. Features include file sharing, message reactions, read receipts, and typing indicators, all secured with end-to-end encryption.",
+            "tags": [
+                "React",
+                "Node.js",
+                "WebSocket",
+                "MongoDB"
+            ],
+            "category": "Communication",
+            "image": "/projectImages/placeholder.jpg",
+            "github": "#",
+            "features": [
+                "Real-time messaging",
+                "Group chats",
+                "File sharing",
+                "End-to-end encryption",
+                "Message reactions"
+            ],
+            "featured": false
+        },
+        {
+            "id": "weather-dashboard",
+            "title": "Weather Dashboard",
+            "shortDescription": "Beautiful weather application with detailed forecasts, interactive maps, and customizable alerts.",
+            "description": "Beautiful weather application with detailed forecasts, interactive maps, and customizable alerts. Supports multiple locations with real-time updates.",
+            "longDescription": "A comprehensive weather application that provides detailed forecasts, historical data, and severe weather alerts. Features include interactive weather maps, hourly and daily forecasts, and the ability to track multiple locations.",
+            "tags": [
+                "Next.js",
+                "TypeScript",
+                "API Integration"
+            ],
+            "category": "Tools",
+            "image": "/projectImages/placeholder.jpg",
+            "link": "#",
+            "features": [
+                "7-day forecasts",
+                "Interactive maps",
+                "Weather alerts",
+                "Multiple locations",
+                "Historical data"
+            ],
+            "featured": false
+        }
+    ],
+    "certifications": [
+        {
+            "name": "Advanced React Development",
+            "issuer": "Online Learning Platform",
+            "date": "2024",
+            "credentialId": "CERT-123456"
+        },
+        {
+            "name": "Rust Programming Fundamentals",
+            "issuer": "Rust Academy",
+            "date": "2023",
+            "credentialId": "RUST-789012"
+        }
+    ],
+    "spokenLanguages": [
+        {
+            "language": "Swedish",
+            "proficiency": "Native"
+        },
+        {
+            "language": "English",
+            "proficiency": "Fluent"
+        }
+    ]
+}
