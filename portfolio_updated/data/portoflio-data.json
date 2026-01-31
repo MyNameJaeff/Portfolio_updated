@@ -5,7 +5,7 @@
         "tagline": "Crafting elegant digital experiences with modern web technologies. Passionate about clean code, innovative solutions, and continuous learning.",
         "location": "Stockholm, Sweden",
         "email": "fredrik04@hotmail.com",
-        "phone": "+46 123 456 789",
+        "phone": "073 995 97 84",
         "bio": "Hi! I'm Fredrik, a fullstack developer based in Stockholm, Sweden. I specialize in creating elegant, performant web applications that solve real-world problems. My journey in software development started with a fascination for how things work under the hood. Today, I combine that curiosity with practical experience in modern web technologies to build solutions that users love.",
         "availability": "Open to opportunities",
         "social": {
@@ -116,35 +116,61 @@
                 "PostgreSQL",
                 "Tailwind CSS"
             ]
-        },
-        {
-            "title": "E-Commerce Developer",
-            "company": "BAMF Platform",
-            "period": "2023 - 2024",
-            "location": "Stockholm, Sweden",
-            "description": "Developed a modern e-commerce platform with intuitive inventory management and seamless user experience using C# and TypeScript.",
-            "responsibilities": [
-                "Developed full-stack e-commerce solution",
-                "Implemented inventory management system",
-                "Created responsive user interfaces",
-                "Integrated payment processing systems",
-                "Optimized database queries and performance"
-            ],
-            "skills": [
-                "C#",
-                "TypeScript",
-                "React",
-                "Tailwind CSS"
-            ]
         }
     ],
     "education": [
         {
-            "degree": "Software Development",
-            "institution": "Technical University / Bootcamp",
-            "period": "2021 - 2023",
+            "degree": "Vocational Degree in Fullstack Development C# .NET",
+            "institution": "ChasAcademy",
+            "period": "2024 - 2026",
             "location": "Stockholm, Sweden",
-            "description": "Focused on full-stack web development, computer science fundamentals, and modern software engineering practices."
+            "description": "Comprehensive vocational program focused on fullstack development using C# .NET, covering frontend and backend technologies, database management, and software engineering principles.",
+            "skills": [
+                "C# .NET",
+                "ASP.NET",
+                "Entity Framework",
+                "SQL Server",
+                "React",
+                "TypeScript",
+                "Tailwind CSS",
+                "Frontend Development",
+                "Version Control with Git",
+                "Agile Methodologies",
+                "Group Projects",
+                "Problem-Solving Skills"
+            ]
+        },
+        {
+            "degree": "Technical Preparatory Year in Information & Media Technology",
+            "institution": "NTI Södertörn",
+            "period": "2023 - 2024",
+            "location": "Stockholm, Sweden",
+            "description": "Preparatory year focusing on information technology and media, providing the foundation for advanced studies in software development and IT systems.",
+            "skills": [
+                "React",
+                "JavaScript",
+                "HTML & CSS",
+                "Version Control with Git",
+                "Group Projects",
+                "Problem-Solving Skills"
+            ]
+        },
+        {
+            "degree": "High School Diploma in Information Technology",
+            "institution": "NTI Södertörn",
+            "period": "2020 - 2023",
+            "location": "Stockholm, Sweden",
+            "description": "High school program specializing in information technology, covering programming, networking, web development, and IT project management. But also general subjects such as mathematics, physics, and english.",
+            "skills": [
+                "C#",
+                "Python",
+                "Web Development",
+                "Networking Basics",
+                "IT Project Management",
+                "Mathematics",
+                "Physics",
+                "English"
+            ]
         }
     ],
     "values": [
@@ -218,115 +244,20 @@
                 "Payment processing"
             ],
             "featured": true
-        },
-        {
-            "id": "task-management",
-            "title": "Task Management System",
-            "shortDescription": "Collaborative project management tool with Kanban boards, time tracking, and team analytics.",
-            "description": "Collaborative project management tool with Kanban boards, time tracking, and team analytics. Designed for agile teams to streamline their workflow and improve productivity.",
-            "longDescription": "A comprehensive task management solution that helps teams organize, track, and complete their work efficiently. Features include customizable Kanban boards, time tracking, sprint planning, and detailed analytics to help teams improve their processes.",
-            "tags": [
-                "Next.js",
-                "Rust",
-                "PostgreSQL"
-            ],
-            "category": "Productivity",
-            "image": "/projectImages/placeholder.jpg",
-            "link": "#",
-            "github": "#",
-            "features": [
-                "Kanban board interface",
-                "Time tracking",
-                "Sprint planning",
-                "Team analytics",
-                "Custom workflows"
-            ],
-            "featured": true
-        },
-        {
-            "id": "portfolio-generator",
-            "title": "Portfolio Generator",
-            "shortDescription": "AI-powered tool that generates professional portfolio websites from user data and preferences.",
-            "description": "AI-powered tool that generates professional portfolio websites from user data and preferences. Automatically creates responsive, modern designs tailored to individual needs.",
-            "longDescription": "An innovative tool that leverages AI to create personalized portfolio websites. Users input their information and preferences, and the system generates a complete, customizable website with modern design patterns and best practices built in.",
-            "tags": [
-                "TypeScript",
-                "C#",
-                "Tailwind"
-            ],
-            "category": "Tools",
-            "image": "/projectImages/placeholder.jpg",
-            "link": "#",
-            "github": "#",
-            "features": [
-                "AI-powered design generation",
-                "Customizable templates",
-                "Responsive layouts",
-                "SEO optimization",
-                "Export functionality"
-            ],
-            "featured": true
-        },
-        {
-            "id": "chat-app",
-            "title": "Real-time Chat Application",
-            "shortDescription": "Modern messaging platform with WebSocket support, file sharing, and group chats.",
-            "description": "Modern messaging platform with WebSocket support, file sharing, and group chats. Built for speed and reliability with end-to-end encryption.",
-            "longDescription": "A secure, real-time messaging application that supports individual and group conversations. Features include file sharing, message reactions, read receipts, and typing indicators, all secured with end-to-end encryption.",
-            "tags": [
-                "React",
-                "Node.js",
-                "WebSocket",
-                "MongoDB"
-            ],
-            "category": "Communication",
-            "image": "/projectImages/placeholder.jpg",
-            "github": "#",
-            "features": [
-                "Real-time messaging",
-                "Group chats",
-                "File sharing",
-                "End-to-end encryption",
-                "Message reactions"
-            ],
-            "featured": false
-        },
-        {
-            "id": "weather-dashboard",
-            "title": "Weather Dashboard",
-            "shortDescription": "Beautiful weather application with detailed forecasts, interactive maps, and customizable alerts.",
-            "description": "Beautiful weather application with detailed forecasts, interactive maps, and customizable alerts. Supports multiple locations with real-time updates.",
-            "longDescription": "A comprehensive weather application that provides detailed forecasts, historical data, and severe weather alerts. Features include interactive weather maps, hourly and daily forecasts, and the ability to track multiple locations.",
-            "tags": [
-                "Next.js",
-                "TypeScript",
-                "API Integration"
-            ],
-            "category": "Tools",
-            "image": "/projectImages/placeholder.jpg",
-            "link": "#",
-            "features": [
-                "7-day forecasts",
-                "Interactive maps",
-                "Weather alerts",
-                "Multiple locations",
-                "Historical data"
-            ],
-            "featured": false
         }
     ],
     "certifications": [
         {
-            "name": "Advanced React Development",
-            "issuer": "Online Learning Platform",
-            "date": "2024",
-            "credentialId": "CERT-123456"
+            "name": "Information Technology Specialist in HTML and CSS",
+            "issuer": "Certiport",
+            "date": "Jan 2023",
+            "credentialId": "Credential ID 6RQp-DwVw / Student-id: 90079336 / DoB: 7 Dec 2004"
         },
         {
-            "name": "Rust Programming Fundamentals",
-            "issuer": "Rust Academy",
-            "date": "2023",
-            "credentialId": "RUST-789012"
+            "name": "Information Technology Specialist in JavaScript",
+            "issuer": "Certiport",
+            "date": "Jan 2023",
+            "credentialId": "Credential ID wvp2H-H94E / Student-Id: 90079336 / DoB: 7 Dec 2004"
         }
     ],
     "spokenLanguages": [

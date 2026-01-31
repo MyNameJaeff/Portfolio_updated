@@ -36,9 +36,9 @@ function ThemedLayout({ children }: { children: React.ReactNode }) {
 
     return (
         <>
-            {/* Persistent Animated Background - Only mounts once, hidden on 404 */}
-            {mounted && !isNotFound && (
-                <div className="fixed inset-0 pointer-events-none overflow-hidden opacity-20 dark:opacity-30 transition-opacity duration-700 z-1">
+            {/* Persistent Animated Background - Renders immediately, no mounted check */}
+            {!isNotFound && (
+                <div className="fixed inset-0 pointer-events-none overflow-hidden opacity-20 dark:opacity-30 transition-opacity duration-700 z-1 bg-gradient-to-br from-primary/10 to-primary/5">
                     <LiquidChrome
                         baseColor={isDark ? [0.5, 0.4, 0.9] : [0.4, 0.4, 0.4]}
                         speed={isDark ? 0.1 : 0.2}
