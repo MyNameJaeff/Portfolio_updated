@@ -75,6 +75,33 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
   const itemEntranceTweenRef = useRef<gsap.core.Tween | null>(null);
 
+  // Smooth scroll handler for anchor links
+  const handleAnchorClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, link: string) => {
+    // Check if it's an anchor link (starts with #)
+    if (link.startsWith('#')) {
+      e.preventDefault();
+
+      const targetId = link.substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        // Close the menu first
+        closeMenu();
+
+        // Wait for menu animation to complete before scrolling
+        setTimeout(() => {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }, 600); // Match this with your menu close animation duration
+      }
+    } else {
+      // For external links, just close the menu
+      closeMenu();
+    }
+  }, []);
+
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const panel = panelRef.current;
@@ -175,251 +202,145 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     if (socialTitle || socialLinks.length || themeSwitchEl) {
       const socialsStart = panelInsertTime + panelDuration * 0.4;
 
-      if (socialTitle) tl.to(socialTitle, { opacity: 1, duration: 0.5, ease: 'power2.out' }, socialsStart);
+      if (socialTitle) {
+        tl.to(socialTitle, { opacity: 1, duration: 0.4, ease: 'power2.out' }, socialsStart);
+      }
       if (socialLinks.length) {
         tl.to(
           socialLinks,
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.55,
-            ease: 'power3.out',
-            stagger: { each: 0.08, from: 'start' },
-            onComplete: () => {
-              gsap.set(socialLinks, { clearProps: 'opacity' });
-            }
-          },
-          socialsStart + 0.04
+          { y: 0, opacity: 1, duration: 0.5, ease: 'power3.out', stagger: { each: 0.06, from: 'start' } },
+          socialsStart + 0.05
         );
       }
       if (themeSwitchEl) {
-        tl.to(
-          themeSwitchEl,
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.55,
-            ease: 'power3.out'
-          },
-          socialsStart + 0.12
-        );
+        tl.to(themeSwitchEl, { y: 0, opacity: 1, duration: 0.5, ease: 'power3.out' }, socialsStart + 0.05);
       }
     }
 
     openTlRef.current = tl;
     return tl;
-  }, [position]);
+  }, []);
 
-  const playOpen = useCallback(() => {
-    if (busyRef.current) return;
+  const openMenu = useCallback(() => {
+    if (busyRef.current || openRef.current) return;
     busyRef.current = true;
-    const tl = buildOpenTimeline();
-    if (tl) {
-      tl.eventCallback('onComplete', () => {
-        busyRef.current = false;
-      });
-      tl.play(0);
-    } else {
-      busyRef.current = false;
-    }
-  }, [buildOpenTimeline]);
+    openRef.current = true;
+    setOpen(true);
 
-  const playClose = useCallback(() => {
-    openTlRef.current?.kill();
-    openTlRef.current = null;
+    const tl = buildOpenTimeline();
+    if (!tl) {
+      busyRef.current = false;
+      return;
+    }
+
+    const plus = plusHRef.current;
+    const plusV = plusVRef.current;
+    const icon = iconRef.current;
+    const textInner = textInnerRef.current;
+    const toggleBtn = toggleBtnRef.current;
+
+    spinTweenRef.current?.kill();
+    textCycleAnimRef.current?.kill();
+    colorTweenRef.current?.kill();
+
+    const spinTl = gsap.timeline({ paused: true });
+    if (icon && plus) {
+      spinTl.to(icon, { rotate: 135, duration: 0.5, ease: 'power2.inOut' });
+      spinTl.to(plus, { rotate: 45, duration: 0.5, ease: 'power2.inOut' }, 0);
+    }
+
+    if (textInner) {
+      gsap.to(textInner, { yPercent: -100, duration: 0.4, ease: 'power2.inOut', overwrite: true });
+    }
+
+    if (toggleBtn && changeMenuColorOnOpen) {
+      colorTweenRef.current = gsap.to(toggleBtn, { color: openMenuButtonColor, duration: 0.4, ease: 'power2.inOut' });
+    }
+
+    tl.play();
+    spinTl.play();
+
+    tl.eventCallback('onComplete', () => {
+      busyRef.current = false;
+      onMenuOpen?.();
+    });
+  }, [buildOpenTimeline, changeMenuColorOnOpen, openMenuButtonColor, onMenuOpen]);
+
+  const closeMenu = useCallback(() => {
+    if (busyRef.current || !openRef.current) return;
+    busyRef.current = true;
+    openRef.current = false;
+    setOpen(false);
+
+    openTlRef.current?.pause();
     itemEntranceTweenRef.current?.kill();
+    spinTweenRef.current?.kill();
+    textCycleAnimRef.current?.kill();
+    colorTweenRef.current?.kill();
 
     const panel = panelRef.current;
     const layers = preLayerElsRef.current;
-    if (!panel) return;
-
-    const all: HTMLElement[] = [...layers, panel];
-    closeTweenRef.current?.kill();
-
-    const offscreen = position === 'left' ? -100 : 100;
-
-    closeTweenRef.current = gsap.to(all, {
-      xPercent: offscreen,
-      duration: 0.32,
-      ease: 'power3.in',
-      overwrite: 'auto',
-      onComplete: () => {
-        const itemEls = Array.from(panel.querySelectorAll('.sm-panel-itemLabel')) as HTMLElement[];
-        if (itemEls.length) gsap.set(itemEls, { yPercent: 140, rotate: 10 });
-
-        const numberEls = Array.from(
-          panel.querySelectorAll('.sm-panel-list[data-numbering] .sm-panel-item')
-        ) as HTMLElement[];
-        if (numberEls.length) gsap.set(numberEls, { ['--sm-num-opacity' as any]: 0 });
-
-        const socialTitle = panel.querySelector('.sm-socials-title') as HTMLElement | null;
-        const socialLinks = Array.from(panel.querySelectorAll('.sm-socials-link')) as HTMLElement[];
-        const themeSwitchEl = panel.querySelector('.sm-theme-switch') as HTMLElement | null;
-
-        if (socialTitle) gsap.set(socialTitle, { opacity: 0 });
-        if (socialLinks.length) gsap.set(socialLinks, { y: 25, opacity: 0 });
-        if (themeSwitchEl) gsap.set(themeSwitchEl, { y: 25, opacity: 0 });
-
-        busyRef.current = false;
-      }
-    });
-  }, [position]);
-
-  const animateIcon = useCallback((opening: boolean) => {
     const icon = iconRef.current;
-    const h = plusHRef.current;
-    const v = plusVRef.current;
-    if (!icon || !h || !v) return;
+    const plus = plusHRef.current;
+    const textInner = textInnerRef.current;
+    const toggleBtn = toggleBtnRef.current;
 
-    spinTweenRef.current?.kill();
+    const allEls = [panel, ...layers].filter(Boolean) as HTMLElement[];
 
-    if (opening) {
-      gsap.set(icon, { rotate: 0, transformOrigin: '50% 50%' });
-      spinTweenRef.current = gsap
-        .timeline({ defaults: { ease: 'power4.out' } })
-        .to(h, { rotate: 45, duration: 0.5 }, 0)
-        .to(v, { rotate: -45, duration: 0.5 }, 0);
-    } else {
-      spinTweenRef.current = gsap
-        .timeline({ defaults: { ease: 'power3.inOut' } })
-        .to(h, { rotate: 0, duration: 0.35 }, 0)
-        .to(v, { rotate: 90, duration: 0.35 }, 0)
-        .to(icon, { rotate: 0, duration: 0.001 }, 0);
-    }
-  }, []);
-
-  const animateColor = useCallback(
-    (opening: boolean) => {
-      const btn = toggleBtnRef.current;
-      if (!btn) return;
-      colorTweenRef.current?.kill();
-      if (changeMenuColorOnOpen) {
-        const targetColor = opening ? openMenuButtonColor : menuButtonColor;
-        colorTweenRef.current = gsap.to(btn, { color: targetColor, delay: 0.18, duration: 0.3, ease: 'power2.out' });
-      } else {
-        gsap.set(btn, { color: menuButtonColor });
+    closeTweenRef.current?.kill();
+    closeTweenRef.current = gsap.to(allEls, {
+      xPercent: position === 'left' ? -100 : 100,
+      duration: 0.6,
+      ease: 'power4.inOut',
+      stagger: { each: 0.04, from: 'end' },
+      onComplete: () => {
+        busyRef.current = false;
+        onMenuClose?.();
       }
-    },
-    [openMenuButtonColor, menuButtonColor, changeMenuColorOnOpen]
-  );
-
-  React.useEffect(() => {
-    if (toggleBtnRef.current) {
-      if (changeMenuColorOnOpen) {
-        const targetColor = openRef.current ? openMenuButtonColor : menuButtonColor;
-        gsap.set(toggleBtnRef.current, { color: targetColor });
-      } else {
-        gsap.set(toggleBtnRef.current, { color: menuButtonColor });
-      }
-    }
-  }, [changeMenuColorOnOpen, menuButtonColor, openMenuButtonColor]);
-
-  const animateText = useCallback((opening: boolean) => {
-    const inner = textInnerRef.current;
-    if (!inner) return;
-
-    textCycleAnimRef.current?.kill();
-
-    const currentLabel = opening ? 'Menu' : 'Close';
-    const targetLabel = opening ? 'Close' : 'Menu';
-    const cycles = 3;
-
-    const seq: string[] = [currentLabel];
-    let last = currentLabel;
-    for (let i = 0; i < cycles; i++) {
-      last = last === 'Menu' ? 'Close' : 'Menu';
-      seq.push(last);
-    }
-    if (last !== targetLabel) seq.push(targetLabel);
-    seq.push(targetLabel);
-
-    setTextLines(seq);
-    gsap.set(inner, { yPercent: 0 });
-
-    const lineCount = seq.length;
-    const finalShift = ((lineCount - 1) / lineCount) * 100;
-
-    textCycleAnimRef.current = gsap.to(inner, {
-      yPercent: -finalShift,
-      duration: 0.5 + lineCount * 0.07,
-      ease: 'power4.out'
     });
-  }, []);
 
-  const toggleMenu = useCallback(() => {
-    const target = !openRef.current;
-    openRef.current = target;
-    setOpen(target);
+    if (icon) gsap.to(icon, { rotate: 0, duration: 0.5, ease: 'power2.inOut' });
+    if (plus) gsap.to(plus, { rotate: 0, duration: 0.5, ease: 'power2.inOut' });
+    if (textInner) gsap.to(textInner, { yPercent: 0, duration: 0.4, ease: 'power2.inOut' });
 
-    if (target) {
-      onMenuOpen?.();
-      playOpen();
-    } else {
-      onMenuClose?.();
-      playClose();
+    if (toggleBtn && changeMenuColorOnOpen) {
+      gsap.to(toggleBtn, { color: menuButtonColor, duration: 0.4, ease: 'power2.inOut' });
     }
+  }, [position, changeMenuColorOnOpen, menuButtonColor, onMenuClose]);
 
-    animateIcon(target);
-    animateColor(target);
-    animateText(target);
-  }, [playOpen, playClose, animateIcon, animateColor, animateText, onMenuOpen, onMenuClose]);
+  const handleToggle = useCallback(() => {
+    if (openRef.current) closeMenu();
+    else openMenu();
+  }, [openMenu, closeMenu]);
 
-  const closeMenu = useCallback(() => {
-    if (openRef.current) {
-      openRef.current = false;
-      setOpen(false);
-      onMenuClose?.();
-      playClose();
-      animateIcon(false);
-      animateColor(false);
-      animateText(false);
-    }
-  }, [playClose, animateIcon, animateColor, animateText, onMenuClose]);
-
-  React.useEffect(() => {
-    if (!closeOnClickAway || !open) return;
-
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        panelRef.current &&
-        !panelRef.current.contains(event.target as Node) &&
-        toggleBtnRef.current &&
-        !toggleBtnRef.current.contains(event.target as Node)
-      ) {
+  const handleClickAway = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!closeOnClickAway || !openRef.current) return;
+      const panel = panelRef.current;
+      if (panel && !panel.contains(e.target as Node)) {
         closeMenu();
       }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [closeOnClickAway, open, closeMenu]);
+    },
+    [closeOnClickAway, closeMenu]
+  );
 
   return (
     <>
-      {/* Header with toggle button - pointer events enabled only on button */}
       <header
-        className={`${isFixed ? 'fixed' : 'absolute'} top-0 left-0 w-full flex items-center justify-between p-[2em] bg-transparent pointer-events-none z-50`}
-        aria-label="Main navigation header"
+        className={`${isFixed ? 'fixed' : 'absolute'} top-0 ${position === 'left' ? 'left-0' : 'right-0'} z-50 p-6 ${className || ''}`}
       >
-        <div className="sm-logo flex items-center select-none" aria-label="Logo">
-          {/* Logo removed as per your code */}
-        </div>
-
         <button
           ref={toggleBtnRef}
-          className="sm-toggle relative inline-flex items-center gap-[0.3rem] bg-transparent border-0 cursor-pointer font-medium leading-none overflow-visible pointer-events-auto transition-colors duration-300"
+          className="sm-toggle"
+          onClick={handleToggle}
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
           aria-controls="staggered-menu-panel"
-          onClick={toggleMenu}
-          type="button"
-          style={{ color: menuButtonColor }}
         >
           <span
             ref={textWrapRef}
-            className="sm-toggle-textWrap relative inline-block h-[1em] overflow-hidden whitespace-nowrap w-[var(--sm-toggle-width,auto)] min-w-[var(--sm-toggle-width,auto)]"
+            className="sm-toggle-textWrap relative mr-[0.5em] inline-block h-[1em] overflow-hidden whitespace-nowrap"
+            style={{ width: 'var(--sm-toggle-width, auto)', minWidth: 'var(--sm-toggle-width, auto)' }}
             aria-hidden="true"
           >
             <span ref={textInnerRef} className="sm-toggle-textInner flex flex-col leading-none">
@@ -457,6 +378,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             ['--sm-hover-color' as any]: accentColor
           } as React.CSSProperties
         }
+        onClick={handleClickAway}
       >
         {/* Background layers */}
         <div
@@ -503,6 +425,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                       href={it.link}
                       aria-label={it.ariaLabel}
                       data-index={idx + 1}
+                      onClick={(e) => handleAnchorClick(e, it.link)}
                     >
                       <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">
                         {it.label}

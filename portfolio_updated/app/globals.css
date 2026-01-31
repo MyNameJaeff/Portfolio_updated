@@ -100,39 +100,15 @@
   --color-chart-5: var(--chart-5);
 }
 
+/* Smooth scrolling for the entire document */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--background);
   color: var(--foreground);
   transition: background-color 0.3s ease, color 0.3s ease;
-  
-  /* Add a subtle gradient background that will show immediately */
-  background-image: 
-    radial-gradient(
-      ellipse at 20% 30%,
-      rgba(0, 0, 0, 0.02) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      ellipse at 80% 70%,
-      rgba(0, 0, 0, 0.015) 0%,
-      transparent 50%
-    );
-  background-attachment: fixed;
-}
-
-.dark body {
-  /* Subtle gradient for dark mode */
-  background-image: 
-    radial-gradient(
-      ellipse at 20% 30%,
-      rgba(124, 102, 224, 0.03) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      ellipse at 80% 70%,
-      rgba(124, 102, 224, 0.02) 0%,
-      transparent 50%
-    );
 }
 
 @layer base {

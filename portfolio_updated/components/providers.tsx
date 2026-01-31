@@ -36,9 +36,9 @@ function ThemedLayout({ children }: { children: React.ReactNode }) {
 
     return (
         <>
-            {/* Persistent Animated Background - Renders immediately, no mounted check */}
-            {!isNotFound && (
-                <div className="fixed inset-0 pointer-events-none overflow-hidden opacity-20 dark:opacity-30 transition-opacity duration-700 z-1 bg-gradient-to-br from-primary/10 to-primary/5">
+            {/* Persistent Animated Background - Only mounts once, hidden on 404 */}
+            {mounted && !isNotFound && (
+                <div className="fixed inset-0 pointer-events-none overflow-hidden opacity-20 dark:opacity-30 transition-opacity duration-700 z-1">
                     <LiquidChrome
                         baseColor={isDark ? [0.5, 0.4, 0.9] : [0.4, 0.4, 0.4]}
                         speed={isDark ? 0.1 : 0.2}
@@ -52,10 +52,11 @@ function ThemedLayout({ children }: { children: React.ReactNode }) {
             {!isNotFound && (
                 <StaggeredMenu
                     items={[
-                        { label: "Home", link: "/", ariaLabel: "Go to homepage" },
-                        { label: "About", link: "/about", ariaLabel: "Learn more about me" },
-                        { label: "Projects", link: "/projects", ariaLabel: "View my projects" },
-                        { label: "Contact", link: "/contact", ariaLabel: "Get in touch with me" },
+                        { label: "Home", link: "#home", ariaLabel: "Go to homepage" },
+                        { label: "About", link: "#about", ariaLabel: "Learn more about me" },
+                        { label: "Skills", link: "#skills", ariaLabel: "View my skills" },
+                        { label: "Projects", link: "#projects", ariaLabel: "View my projects" },
+                        { label: "Contact", link: "#contact", ariaLabel: "Get in touch with me" },
                     ]}
                     isFixed
                     accentColor="var(--chart-4)"
