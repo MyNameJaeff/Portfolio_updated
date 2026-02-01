@@ -234,7 +234,7 @@ export default function Home() {
               {/* CV Body */}
               <div className="cv-body p-8 print:p-12 space-y-8 print:space-y-6">
                 {/* Professional Summary */}
-                <section className="cv-section">
+                <section className="cv-section cv-summary">
                   <h2 className="cv-section-title text-2xl font-bold mb-4 pb-2 border-b-2 border-primary/30 print:border-gray-300 text-foreground print:text-black flex items-center gap-2">
                     <Users className="w-6 h-6 text-primary print:text-gray-800" />
                     Professional Summary
@@ -244,7 +244,7 @@ export default function Home() {
                 </section>
 
                 {/* Experience */}
-                <section className="cv-section break-inside-avoid">
+                <section className="cv-section cv-experience break-inside-avoid">
                   <h2 className="cv-section-title text-2xl font-bold mb-4 pb-2 border-b-2 border-primary/30 print:border-gray-300 text-foreground print:text-black flex items-center gap-2">
                     <Code2 className="w-6 h-6 text-primary print:text-gray-800" />
                     Professional Experience
@@ -301,7 +301,7 @@ export default function Home() {
                 </section>
 
                 {/* Education */}
-                <section className="cv-section break-inside-avoid">
+                <section className="cv-section cv-education break-inside-avoid">
                   <h2 className="cv-section-title text-2xl font-bold mb-4 pb-2 border-b-2 border-primary/30 print:border-gray-300 text-foreground print:text-black flex items-center gap-2">
                     <Award className="w-6 h-6 text-primary print:text-gray-800" />
                     Education
@@ -336,7 +336,7 @@ export default function Home() {
                 </section>
 
                 {/* Skills */}
-                <section className="cv-section break-inside-avoid">
+                <section className="cv-section cv-skills break-inside-avoid">
                   <h2 className="cv-section-title text-2xl font-bold mb-4 pb-2 border-b-2 border-primary/30 print:border-gray-300 text-foreground print:text-black flex items-center gap-2">
                     <Target className="w-6 h-6 text-primary print:text-gray-800" />
                     Technical Skills
@@ -370,7 +370,7 @@ export default function Home() {
 
                 {/* Certifications */}
                 {certifications.length > 0 && (
-                  <section className="cv-section break-inside-avoid">
+                  <section className="cv-section cv-certifications break-inside-avoid">
                     <h2 className="cv-section-title text-2xl font-bold mb-4 pb-2 border-b-2 border-primary/30 print:border-gray-300 text-foreground print:text-black flex items-center gap-2">
                       <Lightbulb className="w-6 h-6 text-primary print:text-gray-800" />
                       Certifications
@@ -391,7 +391,7 @@ export default function Home() {
 
                 {/* Languages */}
                 {spokenLanguages.length > 0 && (
-                  <section className="cv-section break-inside-avoid">
+                  <section className="cv-section cv-languages break-inside-avoid">
                     <h2 className="cv-section-title text-2xl font-bold mb-4 pb-2 border-b-2 border-primary/30 print:border-gray-300 text-foreground print:text-black flex items-center gap-2">
                       <Globe className="w-6 h-6 text-primary print:text-gray-800" />
                       Languages
@@ -942,6 +942,61 @@ export default function Home() {
           /* Force white background and black text for printing */
           body {
             background: white !important;
+          }
+
+          /* PAGE BREAK CONTROLS FOR CV SECTIONS */
+          
+          /* Page 1: Header + Professional Summary */
+          .cv-header {
+            page-break-after: avoid !important;
+            break-after: avoid !important;
+          }
+
+          .cv-summary {
+            page-break-before: avoid !important;
+            break-before: avoid !important;
+            page-break-after: auto !important;
+            break-after: auto !important;
+          }
+
+          /* Page 2: Experience + Education */
+          .cv-experience {
+            page-break-before: always !important;
+            break-before: always !important;
+            page-break-after: avoid !important;
+            break-after: avoid !important;
+          }
+
+          .cv-education {
+            page-break-before: avoid !important;
+            break-before: avoid !important;
+            page-break-after: auto !important;
+            break-after: auto !important;
+          }
+
+          /* Page 3: Skills + Certifications + Languages */
+          .cv-skills {
+            page-break-before: always !important;
+            break-before: always !important;
+            page-break-after: avoid !important;
+            break-after: avoid !important;
+          }
+
+          .cv-certifications {
+            page-break-before: avoid !important;
+            break-before: avoid !important;
+            page-break-after: avoid !important;
+            break-after: avoid !important;
+          }
+
+          .cv-languages {
+            page-break-before: avoid !important;
+            break-before: avoid !important;
+          }
+
+          .cv-footer {
+            page-break-before: avoid !important;
+            break-before: avoid !important;
           }
 
           /* Hide non-CV sections when printing */
