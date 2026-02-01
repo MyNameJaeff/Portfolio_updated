@@ -505,7 +505,7 @@ export default function Home() {
                     <ul className="list-none space-y-2">
                       {exp.responsibilities.map((resp, idx) => (
                         <li key={idx} className="text-muted-foreground flex items-start gap-2">
-                          <span className="text-primary mt-1.5">•</span>
+                          <span className="text-primary">•</span>
                           <span>{resp}</span>
                         </li>
                       ))}
