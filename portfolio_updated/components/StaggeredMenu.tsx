@@ -1,4 +1,4 @@
-import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
+import React, { useCallback, useLayoutEffect, useRef, useState, forwardRef, useImperativeHandle } from 'react';
 import { gsap } from 'gsap';
 import { ThemeSwitch } from './ThemeSwitch';
 
@@ -31,7 +31,11 @@ export interface StaggeredMenuProps {
   onMenuClose?: () => void;
 }
 
-export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
+export interface StaggeredMenuRef {
+  closeMenu: () => void;
+}
+
+export const StaggeredMenu = forwardRef<StaggeredMenuRef, StaggeredMenuProps>(({
   position = 'right',
   colors = ['#B19EEF', '#5227FF'],
   items = [],
@@ -49,7 +53,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   themeSwitch,
   onMenuOpen,
   onMenuClose
-}: StaggeredMenuProps) => {
+}, ref) => {
   const [open, setOpen] = useState(false);
   const openRef = useRef(false);
 
@@ -361,6 +365,11 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     }
   }, [playClose, animateIcon, animateColor, animateText, onMenuClose]);
 
+  // Expose closeMenu method via ref
+  useImperativeHandle(ref, () => ({
+    closeMenu
+  }), [closeMenu]);
+
   React.useEffect(() => {
     if (!closeOnClickAway || !open) return;
 
@@ -575,6 +584,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       `}</style>
     </div>
   );
-};
+});
+
+StaggeredMenu.displayName = 'StaggeredMenu';
 
 export default StaggeredMenu;
