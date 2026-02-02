@@ -1,0 +1,101 @@
+{
+    "language": "Swedish",
+    "nav": {
+        "home": "Hem",
+        "about": "Om mig",
+        "skills": "Kunskaper",
+        "projects": "Projekt",
+        "contact": "Kontakt"
+    },
+    "hero": {
+        "portfolio": "Portfölj",
+        "getInTouch": "Kontakta mig",
+        "viewProjects": "Visa projekt"
+    },
+    "about": {
+        "title": "Om mig",
+        "heading": "Passionerad om att",
+        "headingHighlight": "Bygga lösningar",
+        "whoIAm": "Vem jag är",
+        "bio": "Hej! Jag är Fredrik, en fullstack-utvecklare baserad i Stockholm, Sverige. Jag specialiserar mig på att skapa eleganta och högpresterande webbapplikationer som löser verkliga problem. Min resa inom mjukvaruutveckling började med en fascination för hur saker fungerar under huven. Idag kombinerar jag denna nyfikenhet med praktisk erfarenhet av moderna webteknologier för att bygga lösningar som användare älskar.",
+        "extraInfo": "När jag inte programmerar hittar du mig som utforskar nya teknologier, bidrar till öppen källkod eller delar kunskap med utvecklargemenskapen.",
+        "location": "📍 Plats",
+        "availability": "📧 Tillgänglighet",
+        "viewCV": "Visa CV",
+        "hideCV": "Dölj CV",
+        "downloadPrintCV": "Ladda ner / Skriv ut CV"
+    },
+    "values": {
+        "title": "Kärnvärden",
+        "subtitle": "De principer som styr mitt förhållningssätt till mjukvaruutveckling",
+        "items": {
+            "cleanCode": {
+                "title": "Ren kod",
+                "description": "Skriva underhållbar, väldokumenterad kod som står provet av tiden"
+            },
+            "innovation": {
+                "title": "Innovation",
+                "description": "Ständigt utforska nya teknologier och sätt att lösa problem"
+            },
+            "userFocused": {
+                "title": "Användarfokuserad",
+                "description": "Skapa lösningar som prioriterar användarupplevelse och tillgänglighet"
+            },
+            "collaboration": {
+                "title": "Samarbete",
+                "description": "Bygga starka relationer och arbeta effektivt i olika team"
+            }
+        }
+    },
+    "experience": {
+        "title": "Min professionella resa",
+        "subtitle": "Nyckelroller och projekt som har format min karriär"
+    },
+    "education": {
+        "title": "Utbildning & Lärande",
+        "titleHighlight": "Utbildning",
+        "subtitle": "Kontinuerlig tillväxt genom formell utbildning och praktisk inlärning"
+    },
+    "skills": {
+        "title": "Kunskaper & Expertis",
+        "titleHighlight": "Expertis",
+        "subtitle": "En omfattande verktygslåda byggd genom praktisk erfarenhet och kontinuerligt lärande"
+    },
+    "projects": {
+        "portfolio": "Portfölj",
+        "featured": "Framhävda",
+        "featuredHighlight": "Projekt",
+        "subtitle": "Utforska min kompletta projektportfölj, från företagslösningar till innovativa verktyg. Varje projekt representerar en unik utmaning och en lärandeerfarenhet.",
+        "filter": "Filter:",
+        "noProjects": "Inga projekt hittades i den här kategorin.",
+        "keyFeatures": "Huvudfunktioner:",
+        "viewProject": "Visa projekt"
+    },
+    "certifications": {
+        "title": "Certifikationer & Prestationer",
+        "titleHighlight": "Certifikationer",
+        "subtitle": "Professionella certifikationer och erkända prestationer"
+    },
+    "languages": {
+        "title": "Språk & Kommunikation",
+        "titleHighlight": "Kommunikation",
+        "subtitle": "Talade språk och kommunikativ förmåga"
+    },
+    "contact": {
+        "title": "Låt oss koppla ihop",
+        "titleHighlight": "koppla ihop",
+        "subtitle": "Jag är alltid öppen för att diskutera nya projekt, kreativa idéer eller möjligheter att vara del av din vision.",
+        "email": "E-post",
+        "phone": "Telefon",
+        "connectLinkedin": "Anslut på LinkedIn"
+    },
+    "cv": {
+        "professionalSummary": "Professionell sammanfattning",
+        "experience": "Professionell erfarenhet",
+        "education": "Utbildning",
+        "skills": "Tekniska kunskaper",
+        "certifications": "Certifikationer",
+        "languages": "Språk",
+        "referencesAvailable": "Referenser tillgängliga på begäran"
+    }
+}

@@ -2,11 +2,83 @@
 import { Github, Linkedin, Mail, ExternalLink, Filter, Phone, Download, X, Calendar, MapPin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useRef } from "react";
-import portfolioData from "@/data/portoflio-data.json";
+import { useState, useRef, useEffect } from "react";
+import { useLanguage } from "@/components/LanguageProvider";
 import { Code2, Database, Cloud, Wrench, Users, Languages, Lightbulb, Target, Award, Globe } from "lucide-react";
 
+// Import both portfolio data files statically
+import portfolioEn from '@/data/portfolio-en.json';
+import portfolioSv from '@/data/portfolio-sv.json';
+
+interface Experience {
+  title: string;
+  company: string;
+  period: string;
+  location?: string;
+  description: string;
+  responsibilities: string[];
+  skills: string[];
+}
+
+interface Education {
+  degree: string;
+  institution: string;
+  period: string;
+  location?: string;
+  description: string;
+  skills: string[];
+}
+
+interface Project {
+  id: string;
+  title: string;
+  category: string;
+  description?: string;
+  shortDescription?: string;
+  image: string;
+  tags: string[];
+  github?: string;
+  linkedIn?: string;
+  link?: string;
+  features?: string[];
+}
+
+interface Certification {
+  name: string;
+  issuer: string;
+  date: string;
+  credentialId?: string;
+}
+
+interface SpokenLanguage {
+  language: string;
+  proficiency: string;
+}
+
+interface Value {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface SkillCategory {
+  title: string;
+  icon: string;
+  skills: string[];
+  color: string;
+}
+
+interface Language {
+  language: string;
+  proficiency: string;
+}
+
 export default function Home() {
+  const { language, t } = useLanguage();
+
+  // Select portfolio data based on language
+  const portfolioData = language === 'sv' ? portfolioSv : portfolioEn;
+
   const { personal, skills, projects, experience, education, values, certifications, spokenLanguages } = portfolioData;
   const [selectedFilter, setSelectedFilter] = useState("All");
   const [showCV, setShowCV] = useState(false);
@@ -35,17 +107,20 @@ export default function Home() {
   };
 
   // Convert skills object to array with icons
-  const skillCategories = Object.entries(skills).map(([, category]) => ({
-    ...category,
-    icon: iconMap[category.icon as keyof typeof iconMap]
-  }));
+  const skillCategories = Object.entries(skills).map(([, category]) => {
+    const cat = category as SkillCategory;
+    return {
+      ...cat,
+      icon: iconMap[cat.icon as keyof typeof iconMap]
+    };
+  });
 
   // Get unique categories for filtering
-  const categories = ["All", ...Array.from(new Set(projects.map(p => p.category)))];
+  const categories = ["All", ...Array.from(new Set((projects as Project[]).map((p) => p.category)))];
 
   const filteredProjects = selectedFilter === "All"
-    ? projects
-    : projects.filter(p => p.category === selectedFilter);
+    ? (projects as Project[])
+    : (projects as Project[]).filter((p) => p.category === selectedFilter);
 
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-background text-foreground print:bg-white print:text-black">
@@ -58,7 +133,7 @@ export default function Home() {
             <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
               <div className="space-y-2">
                 <p className="text-xs sm:text-sm font-medium tracking-wider uppercase text-primary opacity-80">
-                  Portfolio
+                  {t('hero.portfolio', 'Portfolio')}
                 </p>
                 <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-foreground leading-tight">
                   {personal.name.split(' ')[0]}
@@ -82,7 +157,7 @@ export default function Home() {
                 href="#contact"
                 className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-primary text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:opacity-90 hover:-translate-y-0.5 shadow-lg text-sm sm:text-base"
               >
-                Get in Touch
+                {t('hero.getInTouch', 'Get in Touch')}
                 <Mail className="inline-block ml-2 w-4 h-4" />
               </a>
 
@@ -90,7 +165,7 @@ export default function Home() {
                 href="#projects"
                 className="group px-6 sm:px-8 py-3 sm:py-4 bg-secondary text-secondary-foreground font-semibold rounded-lg transition-all duration-300 hover:bg-accent hover:text-accent-foreground border border-border text-sm sm:text-base"
               >
-                View Projects
+                {t('hero.viewProjects', 'View Projects')}
                 <ExternalLink className="inline-block ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
@@ -133,36 +208,36 @@ export default function Home() {
           <div className="max-w-4xl w-full">
             <div className="text-center mb-12 sm:mb-16">
               <p className="text-xs sm:text-sm font-medium tracking-wider uppercase text-primary opacity-80 mb-3 sm:mb-4">
-                About Me
+                {t('about.title', 'About Me')}
               </p>
               <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-4 sm:mb-6 leading-tight">
-                Passionate About
+                {t('about.heading', 'Passionate About')}
                 <br />
-                <span className="text-primary">Building Solutions</span>
+                <span className="text-primary">{t('about.headingHighlight', 'Building Solutions')}</span>
               </h2>
             </div>
 
             <div className="space-y-6 sm:space-y-8">
               <div className="p-6 sm:p-8 bg-card backdrop-blur-sm rounded-2xl border border-border">
-                <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-card-foreground">Who I Am</h3>
+                <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-card-foreground">{t('about.whoIAm', 'Who I Am')}</h3>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-3 sm:mb-4">
                   {personal.bio}
                 </p>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  When I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.
+                  {t('about.extraInfo', "When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.")}
                 </p>
               </div>
 
               <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
                 <div className="p-5 sm:p-6 bg-card backdrop-blur-sm rounded-2xl border border-border">
-                  <h4 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-card-foreground">📍 Location</h4>
+                  <h4 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-card-foreground">{t('about.location', '📍 Location')}</h4>
                   <p className="text-sm sm:text-base text-muted-foreground">
                     {personal.location}
                   </p>
                 </div>
 
                 <div className="p-5 sm:p-6 bg-card backdrop-blur-sm rounded-2xl border border-border">
-                  <h4 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-card-foreground">📧 Availability</h4>
+                  <h4 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-card-foreground">{t('about.availability', '📧 Availability')}</h4>
                   <p className="text-sm sm:text-base text-muted-foreground">
                     {personal.availability}
                   </p>
@@ -176,7 +251,7 @@ export default function Home() {
                     className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-primary text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:opacity-90 hover:-translate-y-1 shadow-lg text-sm sm:text-base"
                   >
                     <Download className="mr-2 w-5 h-5" />
-                    View CV
+                    {t('about.viewCV', 'View CV')}
                   </button>
                 </div>}
             </div>
@@ -193,14 +268,14 @@ export default function Home() {
                 className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-secondary text-secondary-foreground font-semibold rounded-lg transition-all duration-300 hover:bg-accent hover:text-accent-foreground border border-border text-sm sm:text-base"
               >
                 <X className="mr-2 w-4 sm:w-5 h-4 sm:h-5" />
-                Hide CV
+                {t('about.hideCV', 'Hide CV')}
               </button>
               <button
                 onClick={handlePrintCV}
                 className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-primary text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:opacity-90 hover:-translate-y-1 shadow-lg text-sm sm:text-base"
               >
                 <Download className="mr-2 w-4 sm:w-5 h-4 sm:h-5" />
-                Download / Print CV
+                {t('about.downloadPrintCV', 'Download / Print CV')}
               </button>
             </div>
 
@@ -237,9 +312,9 @@ export default function Home() {
                 <section className="cv-section cv-summary">
                   <h2 className="cv-section-title text-xl sm:text-2xl font-bold mb-3 sm:mb-4 pb-2 border-b-2 border-primary/30 print:border-gray-300 text-foreground print:text-black flex items-center gap-2">
                     <Users className="w-5 sm:w-6 h-5 sm:h-6 text-primary print:text-gray-800 shrink-0" />
-                    Professional Summary
+                    {t('cv.professionalSummary', 'Professional Summary')}
                   </h2>
-                  <p className="text-sm sm:text-base text-muted-foreground print:text-gray-700 leading-relaxed">{personal.tagline}</p>
+                  {/* <p className="text-sm sm:text-base text-muted-foreground print:text-gray-700 leading-relaxed">{personal.tagline}</p> */}
                   <p className="text-sm sm:text-base text-muted-foreground print:text-gray-700 leading-relaxed mt-2">{personal.bio}</p>
                 </section>
 
@@ -247,10 +322,10 @@ export default function Home() {
                 <section className="cv-section cv-experience break-inside-avoid">
                   <h2 className="cv-section-title text-xl sm:text-2xl font-bold mb-3 sm:mb-4 pb-2 border-b-2 border-primary/30 print:border-gray-300 text-foreground print:text-black flex items-center gap-2">
                     <Code2 className="w-5 sm:w-6 h-5 sm:h-6 text-primary print:text-gray-800 shrink-0" />
-                    Professional Experience
+                    {t('cv.experience', 'Professional Experience')}
                   </h2>
                   <div className="space-y-5 sm:space-y-6 print:space-y-5">
-                    {experience.map((exp, index) => (
+                    {experience.map((exp: Experience, index: number) => (
                       <div key={index} className="cv-experience-item break-inside-avoid">
                         <div className="mb-2">
                           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 sm:gap-4 mb-1">
@@ -274,7 +349,7 @@ export default function Home() {
                         </div>
                         <p className="text-sm sm:text-base text-muted-foreground print:text-gray-700 mb-3 leading-relaxed">{exp.description}</p>
                         <ul className="list-none space-y-1.5 sm:space-y-2 ml-0">
-                          {exp.responsibilities.map((resp, idx) => (
+                          {exp.responsibilities.map((resp: string, idx: number) => (
                             <li key={idx} className="text-sm sm:text-base text-muted-foreground print:text-gray-700 flex items-start gap-2">
                               <span className="text-primary print:text-gray-800 shrink-0">•</span>
                               <span>{resp}</span>
@@ -282,7 +357,7 @@ export default function Home() {
                           ))}
                         </ul>
                         <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-3 print:hidden">
-                          {exp.skills.map((skill, idx) => (
+                          {exp.skills.map((skill: string, idx: number) => (
                             <span
                               key={idx}
                               className="cv-skill-tag px-2 sm:px-3 py-0.5 sm:py-1 text-xs font-medium bg-primary/10 text-primary rounded-full border border-primary/20"
@@ -304,10 +379,10 @@ export default function Home() {
                 <section className="cv-section cv-education break-inside-avoid">
                   <h2 className="cv-section-title text-xl sm:text-2xl font-bold mb-3 sm:mb-4 pb-2 border-b-2 border-primary/30 print:border-gray-300 text-foreground print:text-black flex items-center gap-2">
                     <Award className="w-5 sm:w-6 h-5 sm:h-6 text-primary print:text-gray-800 shrink-0" />
-                    Education
+                    {t('cv.education', 'Education')}
                   </h2>
                   <div className="space-y-4">
-                    {education.map((edu, index) => (
+                    {education.map((edu: Education, index: number) => (
                       <div key={index} className="break-inside-avoid">
                         <div className="mb-2">
                           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-4 mb-1">
@@ -339,17 +414,17 @@ export default function Home() {
                 <section className="cv-section cv-skills break-inside-avoid">
                   <h2 className="cv-section-title text-xl sm:text-2xl font-bold mb-3 sm:mb-4 pb-2 border-b-2 border-primary/30 print:border-gray-300 text-foreground print:text-black flex items-center gap-2">
                     <Target className="w-5 sm:w-6 h-5 sm:h-6 text-primary print:text-gray-800 shrink-0" />
-                    Technical Skills
+                    {t('cv.skills', 'Technical Skills')}
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 print:gap-3">
                     {Object.entries(skills).map(([, category]) => {
-                      const cat = category as { title: string; skills: string[] };
+                      const cat = category as SkillCategory;
                       return (
                         <div key={cat.title} className="break-inside-avoid">
                           <h3 className="font-bold text-sm sm:text-base text-foreground print:text-gray-900 mb-2">{cat.title}</h3>
                           {/* Screen version with tags */}
                           <div className="flex flex-wrap gap-1.5 sm:gap-2 print:hidden">
-                            {cat.skills.map((skill: string, idx: number) => (
+                            {cat.skills.map((skill, idx) => (
                               <span
                                 key={idx}
                                 className="cv-skill-tag px-2 py-0.5 sm:py-1 text-xs bg-secondary/50 text-secondary-foreground rounded border border-border/50"
@@ -369,14 +444,14 @@ export default function Home() {
                 </section>
 
                 {/* Certifications */}
-                {certifications.length > 0 && (
+                {certifications && certifications.length > 0 && (
                   <section className="cv-section cv-certifications break-inside-avoid">
                     <h2 className="cv-section-title text-xl sm:text-2xl font-bold mb-3 sm:mb-4 pb-2 border-b-2 border-primary/30 print:border-gray-300 text-foreground print:text-black flex items-center gap-2">
                       <Lightbulb className="w-5 sm:w-6 h-5 sm:h-6 text-primary print:text-gray-800 shrink-0" />
-                      Certifications
+                      {t('cv.certifications', 'Certifications')}
                     </h2>
                     <div className="space-y-3">
-                      {certifications.map((cert, index) => (
+                      {certifications.map((cert: Certification, index: number) => (
                         <div key={index} className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-2 break-inside-avoid">
                           <div className="flex-1 min-w-0">
                             <h3 className="font-bold text-sm sm:text-base text-foreground print:text-gray-900">{cert.name}</h3>
@@ -390,14 +465,14 @@ export default function Home() {
                 )}
 
                 {/* Languages */}
-                {spokenLanguages.length > 0 && (
+                {spokenLanguages && spokenLanguages.length > 0 && (
                   <section className="cv-section cv-languages break-inside-avoid">
                     <h2 className="cv-section-title text-xl sm:text-2xl font-bold mb-3 sm:mb-4 pb-2 border-b-2 border-primary/30 print:border-gray-300 text-foreground print:text-black flex items-center gap-2">
                       <Globe className="w-5 sm:w-6 h-5 sm:h-6 text-primary print:text-gray-800 shrink-0" />
-                      Languages
+                      {t('cv.languages', 'Languages')}
                     </h2>
                     <div className="flex flex-wrap gap-4 sm:gap-6">
-                      {spokenLanguages.map((lang, index) => (
+                      {spokenLanguages.map((lang: Language, index: number) => (
                         <div key={index}>
                           <span className="font-bold text-sm sm:text-base text-foreground print:text-gray-900">{lang.language}:</span>{" "}
                           <span className="text-sm sm:text-base text-muted-foreground print:text-gray-700">{lang.proficiency}</span>
@@ -410,7 +485,7 @@ export default function Home() {
 
               {/* CV Footer */}
               <div className="print:min-h-[300px] cv-footer p-6 sm:p-8 print:p-6 bg-secondary/30 text-center text-xs sm:text-sm text-muted-foreground print:text-gray-600 print:border-t print:border-gray-300">
-                <p>References available upon request</p>
+                <p>{t('cv.referencesAvailable', 'References available upon request')}</p>
               </div>
             </div>
           </div>
@@ -421,15 +496,15 @@ export default function Home() {
           <div className="max-w-6xl w-full">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
-                Core <span className="text-primary">Values</span>
+                {t('values.title', 'Core')} <span className="text-primary">{t('values.title', 'Values')}</span>
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-                The principles that guide my approach to software development
+                {t('values.subtitle', 'The principles that guide my approach to software development')}
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-              {values.map((value, index) => {
+              {values.map((value: Value, index: number) => {
                 const valueIconMap = {
                   'Code2': Code2,
                   'Lightbulb': Lightbulb,
@@ -467,15 +542,15 @@ export default function Home() {
           <div className="max-w-4xl w-full">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
-                Professional <span className="text-primary">Journey</span>
+                {t('experience.title', 'Professional')} <span className="text-primary">{t('experience.title', 'Journey')}</span>
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-                Key roles and projects that have shaped my career
+                {t('experience.subtitle', 'Key roles and projects that have shaped my career')}
               </p>
             </div>
 
             <div className="space-y-6 sm:space-y-8">
-              {experience.map((exp, index) => (
+              {experience.map((exp: Experience, index: number) => (
                 <div
                   key={index}
                   className="group relative p-6 sm:p-8 bg-card backdrop-blur-sm rounded-2xl border border-border hover:border-primary/50 transition-all duration-300"
@@ -503,7 +578,7 @@ export default function Home() {
                     </p>
 
                     <ul className="list-none space-y-1.5 sm:space-y-2">
-                      {exp.responsibilities.map((resp, idx) => (
+                      {exp.responsibilities.map((resp: string, idx: number) => (
                         <li key={idx} className="text-sm sm:text-base text-muted-foreground flex items-start gap-2">
                           <span className="text-primary shrink-0 mt-0.5">•</span>
                           <span>{resp}</span>
@@ -533,15 +608,15 @@ export default function Home() {
           <div className="max-w-4xl w-full">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
-                <span className="text-primary">Education</span> & Learning
+                <span className="text-primary">{t('education.titleHighlight', 'Education')}</span> & {t('education.title', 'Learning')}
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-                Continuous growth through formal education and hands-on learning
+                {t('education.subtitle', 'Continuous growth through formal education and hands-on learning')}
               </p>
             </div>
 
             <div className="space-y-6 sm:space-y-8">
-              {education.map((edu, index) => (
+              {education.map((edu: Education, index: number) => (
                 <div
                   key={index}
                   className="group relative p-6 sm:p-8 bg-card backdrop-blur-sm rounded-2xl border border-border hover:border-primary/50 transition-all duration-300"
@@ -552,7 +627,7 @@ export default function Home() {
                         <h3 className="text-xl sm:text-2xl font-bold text-card-foreground group-hover:text-primary transition-colors">
                           {edu.degree}
                         </h3>
-                        <p className="text-base sm:text-lg text-primary font-semibold">
+                        <p className="text-base sm:text-lg font-semibold text-primary">
                           {edu.institution}
                         </p>
                       </div>
@@ -566,7 +641,7 @@ export default function Home() {
                     </p>
 
                     {
-                      (edu.skills.length > 0) && (
+                      (edu.skills && edu.skills.length > 0) && (
                         <div className="flex flex-wrap gap-1.5 sm:gap-2">
                           {edu.skills.map((skill, idx) => (
                             <span
@@ -592,10 +667,10 @@ export default function Home() {
           <div className="max-w-6xl w-full">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
-                Skills & <span className="text-primary">Expertise</span>
+                {t('skills.title', 'Skills &')} <span className="text-primary">{t('skills.titleHighlight', 'Expertise')}</span>
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-                A comprehensive toolkit built through hands-on experience and continuous learning
+                {t('skills.subtitle', 'A comprehensive toolkit built through hands-on experience and continuous learning')}
               </p>
             </div>
 
@@ -618,7 +693,7 @@ export default function Home() {
 
                     {/* Skills list */}
                     <div className="relative flex flex-wrap gap-1.5 sm:gap-2">
-                      {category.skills.map((skill: string, idx: number) => (
+                      {category.skills.map((skill, idx) => (
                         <span
                           key={idx}
                           className="px-2.5 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm bg-secondary/50 text-secondary-foreground rounded-full border border-border/50 hover:border-primary/50 transition-colors"
@@ -639,16 +714,15 @@ export default function Home() {
           <div className="max-w-7xl w-full">
             <div className="text-center mb-12 sm:mb-16">
               <p className="text-xs sm:text-sm font-medium tracking-wider uppercase text-primary opacity-80 mb-3 sm:mb-4">
-                Portfolio
+                {t('projects.portfolio', 'Portfolio')}
               </p>
               <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-4 sm:mb-6 leading-tight">
-                Featured
+                {t('projects.featured', 'Featured')}
                 <br />
-                <span className="text-primary">Projects</span>
+                <span className="text-primary">{t('projects.featuredHighlight', 'Projects')}</span>
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                Explore my complete portfolio of projects, from enterprise solutions to innovative tools.
-                Each project represents a unique challenge and a learning experience.
+                {t('projects.subtitle', 'Explore my complete portfolio of projects, from enterprise solutions to innovative tools. Each project represents a unique challenge and a learning experience.')}
               </p>
             </div>
 
@@ -657,7 +731,7 @@ export default function Home() {
               <div className="flex items-center gap-3 sm:gap-4 flex-wrap justify-center">
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <Filter className="w-4 sm:w-5 h-4 sm:h-5" />
-                  <span className="font-semibold text-sm sm:text-base">Filter:</span>
+                  <span className="font-semibold text-sm sm:text-base">{t('projects.filter', 'Filter:')}</span>
                 </div>
                 {categories.map((category) => (
                   <button
@@ -750,7 +824,7 @@ export default function Home() {
                     {/* Features List (if available) */}
                     {project.features && (
                       <div className="mb-3 sm:mb-4">
-                        <p className="text-xs sm:text-sm font-semibold text-card-foreground mb-2">Key Features:</p>
+                        <p className="text-xs sm:text-sm font-semibold text-card-foreground mb-2">{t('projects.keyFeatures', 'Key Features:')}</p>
                         <ul className="grid grid-cols-1 gap-1 text-xs sm:text-sm text-muted-foreground">
                           {project.features.slice(0, 3).map((feature, idx) => (
                             <li key={idx} className="flex items-center gap-2">
@@ -780,7 +854,7 @@ export default function Home() {
                         target="_blank"
                         className="inline-flex items-center text-sm sm:text-base text-primary font-semibold hover:underline group/link"
                       >
-                        View Project
+                        {t('projects.viewProject', 'View Project')}
                         <ExternalLink className="ml-2 w-3.5 sm:w-4 h-3.5 sm:h-4 group-hover/link:translate-x-1 transition-transform" />
                       </Link>
                     )}
@@ -792,7 +866,7 @@ export default function Home() {
             {filteredProjects.length === 0 && (
               <div className="text-center py-16 sm:py-20">
                 <p className="text-lg sm:text-xl text-muted-foreground">
-                  No projects found in this category.
+                  {t('projects.noProjects', 'No projects found in this category.')}
                 </p>
               </div>
             )}
@@ -804,15 +878,15 @@ export default function Home() {
           <div className="max-w-4xl w-full">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
-                <span className="text-primary">Certifications</span> & Achievements
+                <span className="text-primary">{t('certifications.titleHighlight', 'Certifications')}</span> & {t('certifications.title', 'Achievements')}
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-                Professional certifications and recognized achievements
+                {t('certifications.subtitle', 'Professional certifications and recognized achievements')}
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-              {certifications.map((cert, index) => (
+              {certifications.map((cert: Certification, index: number) => (
                 <div
                   key={index}
                   className="p-5 sm:p-6 bg-card backdrop-blur-sm rounded-2xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
@@ -847,15 +921,15 @@ export default function Home() {
           <div className="max-w-4xl w-full">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
-                Languages & <span className="text-primary">Communication</span>
+                {t('languages.title', 'Languages &')} <span className="text-primary">{t('languages.titleHighlight', 'Communication')}</span>
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-                Spoken languages and communication proficiency
+                {t('languages.subtitle', 'Spoken languages and communication proficiency')}
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-              {spokenLanguages.map((lang, index) => (
+              {spokenLanguages.map((lang: Language, index: number) => (
                 <div
                   key={index}
                   className="p-6 sm:p-8 bg-card backdrop-blur-sm rounded-2xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
@@ -883,17 +957,17 @@ export default function Home() {
         <section id="contact" className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-12 sm:py-20 print:hidden">
           <div className="max-w-2xl w-full text-center">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 leading-tight">
-              Let&apos;s <span className="text-primary">Connect</span>
+              {t('contact.title', "Let's")} <span className="text-primary">{t('contact.titleHighlight', 'Connect')}</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
-              I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+              {t('contact.subtitle', "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.")}
             </p>
 
             <div className="grid md:grid-cols-2 gap-4 mb-10 sm:mb-12">
               <div className="p-5 sm:p-6 bg-card backdrop-blur-sm rounded-2xl border border-border">
                 <div className="flex items-center gap-2.5 sm:gap-3 mb-2 sm:mb-3">
                   <Mail className="w-4 sm:w-5 h-4 sm:h-5 text-primary shrink-0" />
-                  <span className="font-semibold text-sm sm:text-base text-card-foreground">Email</span>
+                  <span className="font-semibold text-sm sm:text-base text-card-foreground">{t('contact.email', 'Email')}</span>
                 </div>
                 <Link
                   href={personal.social.email}
@@ -906,7 +980,7 @@ export default function Home() {
               <div className="p-5 sm:p-6 bg-card backdrop-blur-sm rounded-2xl border border-border">
                 <div className="flex items-center gap-2.5 sm:gap-3 mb-2 sm:mb-3">
                   <Phone className="w-4 sm:w-5 h-4 sm:h-5 text-primary shrink-0" />
-                  <span className="font-semibold text-sm sm:text-base text-card-foreground">Phone</span>
+                  <span className="font-semibold text-sm sm:text-base text-card-foreground">{t('contact.phone', 'Phone')}</span>
                 </div>
                 <p className="text-sm sm:text-base text-muted-foreground font-medium">
                   {personal.phone}
@@ -922,7 +996,7 @@ export default function Home() {
                 className="inline-flex items-center justify-center px-8 sm:px-12 py-4 sm:py-5 bg-primary text-primary-foreground text-base sm:text-lg font-semibold rounded-lg transition-all duration-300 hover:opacity-90 hover:-translate-y-1 shadow-lg"
               >
                 <Linkedin className="mr-2 sm:mr-3 w-5 h-5" />
-                Connect on LinkedIn
+                {t('contact.connectLinkedin', 'Connect on LinkedIn')}
               </Link>
             </div>
           </div>

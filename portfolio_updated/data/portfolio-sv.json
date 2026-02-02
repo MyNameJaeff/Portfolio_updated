@@ -1,0 +1,273 @@
+{
+    "personal": {
+        "name": "Fredrik Andersson",
+        "title": "Fullstack-utvecklare",
+        "tagline": "Skapar eleganta digitala upplevelser med modern webbteknik. Passionerad om ren kod, innovativa lösningar och kontinuerligt lärande.",
+        "location": "Stockholm, Sverige",
+        "email": "fredrik04@hotmail.com",
+        "phone": "073 995 97 84",
+        "bio": "Hej! Jag är Fredrik, en fullstack-utvecklare baserad i Stockholm, Sverige. Jag specialiserar mig på att skapa eleganta, högpresterande webbapplikationer som löser verkliga problem. Min resa inom mjukvaruutveckling började med en fascination för hur saker fungerar under huven. Idag kombinerar jag denna nyfikenhet med praktisk erfarenhet av moderna webteknologier för att bygga lösningar som användare älskar.",
+        "availability": "Öppen för möjligheter",
+        "social": {
+            "github": "https://github.com/MyNameJaeff",
+            "linkedin": "https://www.linkedin.com/in/fredrik-andersson-2006412aa/?locale=sv_SE",
+            "email": "mailto:fredrik04@hotmail.com"
+        }
+    },
+    "skills": {
+        "frontend": {
+            "title": "Frontend",
+            "icon": "Code2",
+            "color": "from-blue-500 to-cyan-500",
+            "skills": [
+                "React",
+                "Next.js",
+                "TypeScript",
+                "Tailwind CSS",
+                "HTML",
+                "CSS",
+                "JavaScript"
+            ]
+        },
+        "backend": {
+            "title": "Backend",
+            "icon": "Database",
+            "color": "from-green-500 to-emerald-500",
+            "skills": [
+                "C#",
+                "Rust",
+                "PostgreSQL",
+                "Node.js",
+                "Express",
+                "PHP",
+                "MySQL",
+                "Azure",
+                "Firebase"
+            ]
+        },
+        "devops": {
+            "title": "DevOps",
+            "icon": "Cloud",
+            "color": "from-purple-500 to-pink-500",
+            "skills": [
+                "Docker",
+                "CI/CD",
+                "Git"
+            ]
+        },
+        "tools": {
+            "title": "Verktyg",
+            "icon": "Wrench",
+            "color": "from-orange-500 to-red-500",
+            "skills": [
+                "VS Code",
+                "Visual Studio",
+                "Figma",
+                "Postman",
+                "GitHub"
+            ]
+        },
+        "softSkills": {
+            "title": "Mjuka kunskaper",
+            "icon": "Users",
+            "color": "from-indigo-500 to-purple-500",
+            "skills": [
+                "Problemlösning",
+                "Teamwork",
+                "Kommunikation",
+                "Arbeta i team",
+                "Arbeta självständigt",
+                "Agile"
+            ]
+        },
+        "languages": {
+            "title": "Programmeringsspråk",
+            "icon": "Languages",
+            "color": "from-yellow-500 to-amber-500",
+            "skills": [
+                "JavaScript",
+                "TypeScript",
+                "Rust",
+                "SQL",
+                "C#",
+                "HTML",
+                "CSS",
+                "PHP"
+            ]
+        }
+    },
+    "experience": [
+        {
+            "title": "Fullstack-utvecklare",
+            "company": "Aveno CRM",
+            "period": "2024 - Närvarande",
+            "location": "Stockholm, Sverige",
+            "description": "Bygger en omfattande CRM- och projektledningsplattform med React, Rust och PostgreSQL. Leder frontendutveckling och bidrar till arkitektur på backendnivå.",
+            "responsibilities": [
+                "Ledde frontendutveckling med React och TypeScript",
+                "Bidrog till backendarkitektur med Rust",
+                "Implementerade realtidsfunktioner och datasynkronisering",
+                "Samarbetade med tvärfunktionella team",
+                "Optimerade applikationsprestanda och skalbarhet"
+            ],
+            "skills": [
+                "React",
+                "Rust",
+                "PostgreSQL",
+                "Tailwind CSS"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "degree": "Yrkesexamen i Fullstack-utveckling C# .NET",
+            "institution": "ChasAcademy",
+            "period": "2024 - 2026",
+            "location": "Stockholm, Sverige",
+            "description": "Ett omfattande yrkesutbildningsprogram fokuserat på fullstack-utveckling med C# .NET, som omfattar frontend- och backend-teknologier, databashantering och mjukvaruutvecklingsprinciper.",
+            "skills": [
+                "C# .NET",
+                "ASP.NET",
+                "Entity Framework",
+                "SQL Server",
+                "React",
+                "TypeScript",
+                "Tailwind CSS",
+                "Frontendutveckling",
+                "Versionskontroll med Git",
+                "Agile-metoder",
+                "Grupprojekt",
+                "Problemlösningsförmåga"
+            ]
+        },
+        {
+            "degree": "Tekniskt förberedande år i IT & Medieteknik",
+            "institution": "NTI Södertörn",
+            "period": "2023 - 2024",
+            "location": "Stockholm, Sverige",
+            "description": "Förberedande år fokuserat på informationsteknik och media, som ger grundlaget för avancerade studier inom mjukvaruutveckling och IT-system.",
+            "skills": [
+                "React",
+                "JavaScript",
+                "HTML & CSS",
+                "Versionskontroll med Git",
+                "Grupprojekt",
+                "Problemlösningsförmåga"
+            ]
+        },
+        {
+            "degree": "Gymnasieexamen i Informationsteknik",
+            "institution": "NTI Södertörn",
+            "period": "2020 - 2023",
+            "location": "Stockholm, Sverige",
+            "description": "Gymnasieprogram specialiserat på media- och informationsteknik, som omfattar programmering, nätverk, webbutveckling och IT-projektledning. Men även allmänna ämnen som matematik, fysik och engelska.",
+            "skills": [
+                "C#",
+                "Python",
+                "Webbutveckling",
+                "Grundläggande nätverk",
+                "IT-projektledning",
+                "Matematik",
+                "Fysik",
+                "Engelska"
+            ]
+        }
+    ],
+    "values": [
+        {
+            "icon": "Code2",
+            "title": "Ren kod",
+            "description": "Skriva underhållbar, väldokumenterad kod som står provet av tiden"
+        },
+        {
+            "icon": "Lightbulb",
+            "title": "Innovation",
+            "description": "Ständigt utforska nya teknologier och sätt att lösa problem"
+        },
+        {
+            "icon": "Target",
+            "title": "Användarfokuserad",
+            "description": "Skapa lösningar som prioriterar användarupplevelse och tillgänglighet"
+        },
+        {
+            "icon": "Users",
+            "title": "Samarbete",
+            "description": "Bygga starka relationer och arbeta effektivt i olika team"
+        }
+    ],
+    "projects": [
+        {
+            "id": "aveno",
+            "title": "'Aveno' en CRM- och projektledningsplattform",
+            "shortDescription": "En omfattande CRM- och projektledningslösning utformad för att effektivisera affärsverksamhet, förbättra kundrelationer och förbättra teamsamarbete.",
+            "description": "En omfattande CRM- och projektledningslösning utformad för att effektivisera affärsverksamhet, förbättra kundrelationer och förbättra teamsamarbete. Funktionerna inkluderar projektuppföljning, kundhantering, teamsamarbetsverktyg och detaljerad analys.",
+            "longDescription": "Aveno är ett fullt utrustat CRM-system byggt med moderna teknologier. Det ger företag verktyg för att hantera kundrelationer, spåra projekt, samarbeta med team och analysera affärsmätningar. Plattformen har en responsiv design, realtidsuppdateringar och integrationer med populära affärsverktyg.",
+            "tags": [
+                "React",
+                "Tailwind CSS",
+                "Rust",
+                "PostgreSQL"
+            ],
+            "category": "Företag",
+            "image": "/projectImages/Aveno.png",
+            "link": "https://aveno.se/",
+            "linkedIn": "https://www.linkedin.com/company/aveno-crm/",
+            "features": [
+                "Kundrelationshantering",
+                "Projektuppföljning och hantering",
+                "Teamsamarbetsverktyg",
+                "Analytics och rapportering",
+                "API-integrationer"
+            ],
+            "featured": true
+        },
+        {
+            "id": "bamf",
+            "title": "'BAMF' en e-handelsplattform",
+            "shortDescription": "En modern e-handelsplattform med enkel lagerhantering, intuitiv gränssnitt, modernt design och sömlös användarupplevelse.",
+            "description": "En modern e-handelsplattform med enkel lagerhantering, intuitiv gränssnitt, modernt design och sömlös användarupplevelse. Byggd med fokus på prestanda och skalbarhet.",
+            "longDescription": "BAMF är en spjutspets e-handelslösning som kombinerar elegant design med kraftfull funktionalitet. Plattformen stöder produkthantering, orderbehandling, betalningsintegrering och kundanalys, allt inslaget i ett användarvänligt gränssnitt.",
+            "tags": [
+                "C#",
+                "TypeScript",
+                "React",
+                "Tailwind CSS"
+            ],
+            "category": "E-handel",
+            "image": "/projectImages/BAMF.png",
+            "github": "https://github.com/BAMF-1",
+            "features": [
+                "Produktkataloghantering",
+                "Shoppingvagn och kassa",
+                "Orderuppföljning",
+                "Lagerhantering",
+                "Betalningshantering"
+            ],
+            "featured": true
+        }
+    ],
+    "certifications": [
+        {
+            "name": "Information Technology Specialist i HTML och CSS",
+            "issuer": "Certiport",
+            "date": "Jan 2023",
+            "credentialId": "Credential ID 6RQp-DwVw / Student-id: 90079336 / DoB: 7 Dec 2004"
+        },
+        {
+            "name": "Information Technology Specialist i JavaScript",
+            "issuer": "Certiport",
+            "date": "Jan 2023",
+            "credentialId": "Credential ID wvp2H-H94E / Student-Id: 90079336 / DoB: 7 Dec 2004"
+        }
+    ],
+    "spokenLanguages": [
+        {
+            "language": "Svenska",
+            "proficiency": "Modersmål"
+        },
+        {
+            "language": "Engelska",
+            "proficiency": "Flytande"
+        }
+    ]
+}

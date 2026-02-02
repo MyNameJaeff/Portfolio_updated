@@ -5,10 +5,13 @@ import { ThemeSwitch } from "@/components/ThemeSwitch";
 import StaggeredMenu from "@/components/StaggeredMenu";
 import LiquidChrome from "@/components/LiquidChrome";
 import { useEffect, useState, useRef } from "react";
+import { LanguageProvider, useLanguage } from "@/components/LanguageProvider";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 // Create a separate component that uses the theme
 function ThemedLayout({ children }: { children: React.ReactNode }) {
     const { resolvedTheme } = useTheme();
+    const { t } = useLanguage();
     const [mounted, setMounted] = useState(false);
     const [isNotFound, setIsNotFound] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
@@ -96,11 +99,11 @@ function ThemedLayout({ children }: { children: React.ReactNode }) {
                 <StaggeredMenu
                     ref={menuRef}
                     items={[
-                        { label: "Home", link: "#home", ariaLabel: "Go to homepage" },
-                        { label: "About", link: "#about", ariaLabel: "Learn more about me" },
-                        { label: "Skills", link: "#skills", ariaLabel: "View my skills" },
-                        { label: "Projects", link: "#projects", ariaLabel: "View my projects" },
-                        { label: "Contact", link: "#contact", ariaLabel: "Get in touch with me" },
+                        { label: t('nav.home', 'Home'), link: "#home", ariaLabel: t('nav.home', 'Go to homepage') },
+                        { label: t('nav.about', 'About'), link: "#about", ariaLabel: t('nav.about', 'Learn more about me') },
+                        { label: t('nav.skills', 'Skills'), link: "#skills", ariaLabel: t('nav.skills', 'View my skills') },
+                        { label: t('nav.projects', 'Projects'), link: "#projects", ariaLabel: t('nav.projects', 'View my projects') },
+                        { label: t('nav.contact', 'Contact'), link: "#contact", ariaLabel: t('nav.contact', 'Get in touch with me') },
                     ]}
                     isFixed
                     accentColor="var(--chart-4)"
@@ -112,7 +115,12 @@ function ThemedLayout({ children }: { children: React.ReactNode }) {
                     openMenuButtonColor="var(--foreground)"
                     changeMenuColorOnOpen={true}
                     closeOnClickAway={true}
-                    themeSwitch={<ThemeSwitch />}
+                    themeSwitch={
+                        <div className="flex flex-col gap-3">
+                            <ThemeSwitch />
+                            <LanguageSwitcher />
+                        </div>
+                    }
                 />
             )}
 
@@ -130,7 +138,11 @@ export function Providers({ children, ...props }: ThemeProviderProps) {
             enableSystem
             {...props}
         >
-            <ThemedLayout>{children}</ThemedLayout>
+            <LanguageProvider>
+                <ThemedLayout>
+                    {children}
+                </ThemedLayout>
+            </LanguageProvider>
         </NextThemesProvider>
     );
 }

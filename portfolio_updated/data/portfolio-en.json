@@ -1,0 +1,273 @@
+{
+    "personal": {
+        "name": "Fredrik Andersson",
+        "title": "Fullstack Developer",
+        "tagline": "Crafting elegant digital experiences with modern web technologies. Passionate about clean code, innovative solutions, and continuous learning.",
+        "location": "Stockholm, Sweden",
+        "email": "fredrik04@hotmail.com",
+        "phone": "073 995 97 84",
+        "bio": "Hi! I'm Fredrik, a fullstack developer based in Stockholm, Sweden. I specialize in creating elegant, performant web applications that solve real-world problems. My journey in software development started with a fascination for how things work under the hood. Today, I combine that curiosity with practical experience in modern web technologies to build solutions that users love.",
+        "availability": "Open to opportunities",
+        "social": {
+            "github": "https://github.com/MyNameJaeff",
+            "linkedin": "https://www.linkedin.com/in/fredrik-andersson-2006412aa/?locale=en_US",
+            "email": "mailto:fredrik04@hotmail.com"
+        }
+    },
+    "skills": {
+        "frontend": {
+            "title": "Frontend",
+            "icon": "Code2",
+            "color": "from-blue-500 to-cyan-500",
+            "skills": [
+                "React",
+                "Next.js",
+                "TypeScript",
+                "Tailwind CSS",
+                "HTML",
+                "CSS",
+                "JavaScript"
+            ]
+        },
+        "backend": {
+            "title": "Backend",
+            "icon": "Database",
+            "color": "from-green-500 to-emerald-500",
+            "skills": [
+                "C#",
+                "Rust",
+                "PostgreSQL",
+                "Node.js",
+                "Express",
+                "PHP",
+                "MySQL",
+                "Azure",
+                "Firebase"
+            ]
+        },
+        "devops": {
+            "title": "DevOps",
+            "icon": "Cloud",
+            "color": "from-purple-500 to-pink-500",
+            "skills": [
+                "Docker",
+                "CI/CD",
+                "Git"
+            ]
+        },
+        "tools": {
+            "title": "Tools",
+            "icon": "Wrench",
+            "color": "from-orange-500 to-red-500",
+            "skills": [
+                "VS Code",
+                "Visual Studio",
+                "Figma",
+                "Postman",
+                "GitHub"
+            ]
+        },
+        "softSkills": {
+            "title": "Soft Skills",
+            "icon": "Users",
+            "color": "from-indigo-500 to-purple-500",
+            "skills": [
+                "Problem Solving",
+                "Team Work",
+                "Communication",
+                "Working in a Team",
+                "Working Independently",
+                "Agile"
+            ]
+        },
+        "languages": {
+            "title": "Languages",
+            "icon": "Languages",
+            "color": "from-yellow-500 to-amber-500",
+            "skills": [
+                "JavaScript",
+                "TypeScript",
+                "Rust",
+                "SQL",
+                "C#",
+                "HTML",
+                "CSS",
+                "PHP"
+            ]
+        }
+    },
+    "experience": [
+        {
+            "title": "Fullstack Developer",
+            "company": "Aveno CRM",
+            "period": "2024 - Present",
+            "location": "Stockholm, Sweden",
+            "description": "Building a comprehensive CRM and project management platform using React, Rust, and PostgreSQL. Leading frontend development and contributing to backend architecture.",
+            "responsibilities": [
+                "Led frontend development using React and TypeScript",
+                "Contributed to backend architecture with Rust",
+                "Implemented real-time features and data synchronization",
+                "Collaborated with cross-functional teams",
+                "Optimized application performance and scalability"
+            ],
+            "skills": [
+                "React",
+                "Rust",
+                "PostgreSQL",
+                "Tailwind CSS"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "degree": "Vocational Degree in Fullstack Development C# .NET",
+            "institution": "ChasAcademy",
+            "period": "2024 - 2026",
+            "location": "Stockholm, Sweden",
+            "description": "Comprehensive vocational program focused on fullstack development using C# .NET, covering frontend and backend technologies, database management, and software engineering principles.",
+            "skills": [
+                "C# .NET",
+                "ASP.NET",
+                "Entity Framework",
+                "SQL Server",
+                "React",
+                "TypeScript",
+                "Tailwind CSS",
+                "Frontend Development",
+                "Version Control with Git",
+                "Agile Methodologies",
+                "Group Projects",
+                "Problem-Solving Skills"
+            ]
+        },
+        {
+            "degree": "Technical Preparatory Year in Information & Media Technology",
+            "institution": "NTI Södertörn",
+            "period": "2023 - 2024",
+            "location": "Stockholm, Sweden",
+            "description": "Preparatory year focusing on information technology and media, providing the foundation for advanced studies in software development and IT systems.",
+            "skills": [
+                "React",
+                "JavaScript",
+                "HTML & CSS",
+                "Version Control with Git",
+                "Group Projects",
+                "Problem-Solving Skills"
+            ]
+        },
+        {
+            "degree": "High School Diploma in Information Technology",
+            "institution": "NTI Södertörn",
+            "period": "2020 - 2023",
+            "location": "Stockholm, Sweden",
+            "description": "High school program specializing in information technology, covering programming, networking, web development, and IT project management. But also general subjects such as mathematics, physics, and english.",
+            "skills": [
+                "C#",
+                "Python",
+                "Web Development",
+                "Networking Basics",
+                "IT Project Management",
+                "Mathematics",
+                "Physics",
+                "English"
+            ]
+        }
+    ],
+    "values": [
+        {
+            "icon": "Code2",
+            "title": "Clean Code",
+            "description": "Writing maintainable, well-documented code that stands the test of time"
+        },
+        {
+            "icon": "Lightbulb",
+            "title": "Innovation",
+            "description": "Constantly exploring new technologies and approaches to solve problems"
+        },
+        {
+            "icon": "Target",
+            "title": "User-Focused",
+            "description": "Creating solutions that prioritize user experience and accessibility"
+        },
+        {
+            "icon": "Users",
+            "title": "Collaboration",
+            "description": "Building strong relationships and working effectively in diverse teams"
+        }
+    ],
+    "projects": [
+        {
+            "id": "aveno",
+            "title": "'Aveno' a CRM and project management platform",
+            "shortDescription": "A comprehensive CRM and project management solution designed to streamline business operations, enhance customer relationships, and improve team collaboration.",
+            "description": "A comprehensive CRM and project management solution designed to streamline business operations, enhance customer relationships, and improve team collaboration. Features include project tracking, customer management, team collaboration tools, and detailed analytics.",
+            "longDescription": "Aveno is a full-featured CRM system built with modern technologies. It provides businesses with tools to manage customer relationships, track projects, collaborate with teams, and analyze business metrics. The platform features a responsive design, real-time updates, and integrations with popular business tools.",
+            "tags": [
+                "React",
+                "Tailwind CSS",
+                "Rust",
+                "PostgreSQL"
+            ],
+            "category": "Enterprise",
+            "image": "/projectImages/Aveno.png",
+            "link": "https://aveno.se/",
+            "linkedIn": "https://www.linkedin.com/company/aveno-crm/",
+            "features": [
+                "Customer relationship management",
+                "Project tracking and management",
+                "Team collaboration tools",
+                "Analytics and reporting",
+                "API integrations"
+            ],
+            "featured": true
+        },
+        {
+            "id": "bamf",
+            "title": "'BAMF' an E-Commerce Platform",
+            "shortDescription": "A modern e-commerce platform with easy inventory management, intuitive interface, modern design, and seamless user experience.",
+            "description": "A modern e-commerce platform with easy inventory management, intuitive interface, modern design, and seamless user experience. Built with a focus on performance and scalability.",
+            "longDescription": "BAMF is a cutting-edge e-commerce solution that combines elegant design with powerful functionality. The platform supports product management, order processing, payment integration, and customer analytics, all wrapped in a user-friendly interface.",
+            "tags": [
+                "C#",
+                "TypeScript",
+                "React",
+                "Tailwind CSS"
+            ],
+            "category": "E-Commerce",
+            "image": "/projectImages/BAMF.png",
+            "github": "https://github.com/BAMF-1",
+            "features": [
+                "Product catalog management",
+                "Shopping cart and checkout",
+                "Order tracking",
+                "Inventory management",
+                "Payment processing"
+            ],
+            "featured": true
+        }
+    ],
+    "certifications": [
+        {
+            "name": "Information Technology Specialist in HTML and CSS",
+            "issuer": "Certiport",
+            "date": "Jan 2023",
+            "credentialId": "Credential ID 6RQp-DwVw / Student-id: 90079336 / DoB: 7 Dec 2004"
+        },
+        {
+            "name": "Information Technology Specialist in JavaScript",
+            "issuer": "Certiport",
+            "date": "Jan 2023",
+            "credentialId": "Credential ID wvp2H-H94E / Student-Id: 90079336 / DoB: 7 Dec 2004"
+        }
+    ],
+    "spokenLanguages": [
+        {
+            "language": "Swedish",
+            "proficiency": "Native"
+        },
+        {
+            "language": "English",
+            "proficiency": "Fluent"
+        }
+    ]
+}
