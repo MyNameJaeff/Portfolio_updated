@@ -23,7 +23,7 @@ export function LanguageSwitcher() {
                         aria-checked={isActive}
                         aria-label={`${name} language`}
                         className={`
-                            relative flex items-center justify-center flex-1 gap-2 px-2 py-2
+                            relative flex items-center justify-center flex-1 gap-2 px-2 py-1
                             ${index === 0 ? "rounded-l-full" : ""}
                             ${index === Object.entries(LANGUAGES).length - 1 ? "rounded-r-full" : ""} 
                             text-sm font-medium

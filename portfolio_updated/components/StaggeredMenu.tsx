@@ -532,7 +532,7 @@ export const StaggeredMenu = forwardRef<StaggeredMenuRef, StaggeredMenuProps>(({
             )}
           </div>
           {themeSwitch && (
-            <div className="sm-panel-bottom h-[2em] flex-shrink-0">
+            <div className="sm-panel-bottom h-fit flex-shrink-0">
               {themeSwitch}
             </div>
           )}

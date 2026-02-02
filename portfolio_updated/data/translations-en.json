@@ -26,7 +26,8 @@
         "downloadPrintCV": "Download / Print CV"
     },
     "values": {
-        "title": "Core Values",
+        "titleCore": "Core",
+        "titleHighlight": "Values",
         "subtitle": "The principles that guide my approach to software development",
         "items": {
             "cleanCode": {
@@ -48,16 +49,17 @@
         }
     },
     "experience": {
-        "title": "Professional Journey",
+        "titlePart1": "Professional",
+        "titlePart2": "Journey",
         "subtitle": "Key roles and projects that have shaped my career"
     },
     "education": {
-        "title": "Education & Learning",
-        "titleHighlight": "Education",
+        "title": "Education",
+        "titleHighlight": "Learning",
         "subtitle": "Continuous growth through formal education and hands-on learning"
     },
     "skills": {
-        "title": "Skills & Expertise",
+        "title": "Skills",
         "titleHighlight": "Expertise",
         "subtitle": "A comprehensive toolkit built through hands-on experience and continuous learning"
     },
@@ -72,17 +74,17 @@
         "viewProject": "View Project"
     },
     "certifications": {
-        "title": "Certifications & Achievements",
-        "titleHighlight": "Certifications",
+        "title": "Certifications",
+        "titleHighlight": "Achievements",
         "subtitle": "Professional certifications and recognized achievements"
     },
     "languages": {
-        "title": "Languages & Communication",
+        "title": "Languages",
         "titleHighlight": "Communication",
         "subtitle": "Spoken languages and communication proficiency"
     },
     "contact": {
-        "title": "Let's Connect",
+        "title": "Let's",
         "titleHighlight": "Connect",
         "subtitle": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
         "email": "Email",

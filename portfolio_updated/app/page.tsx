@@ -211,9 +211,7 @@ export default function Home() {
                 {t('about.title', 'About Me')}
               </p>
               <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-4 sm:mb-6 leading-tight">
-                {t('about.heading', 'Passionate About')}
-                <br />
-                <span className="text-primary">{t('about.headingHighlight', 'Building Solutions')}</span>
+                {t('about.heading', 'Passionate About')} <span className="text-primary">{t('about.headingHighlight', 'Building Solutions')}</span>
               </h2>
             </div>
 
@@ -496,7 +494,7 @@ export default function Home() {
           <div className="max-w-6xl w-full">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
-                {t('values.title', 'Core')} <span className="text-primary">{t('values.title', 'Values')}</span>
+                {t('values.titleCore', 'Core')} <span className="text-primary">{t('values.titleHighlight', 'Values')}</span>
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
                 {t('values.subtitle', 'The principles that guide my approach to software development')}
@@ -542,7 +540,7 @@ export default function Home() {
           <div className="max-w-4xl w-full">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
-                {t('experience.title', 'Professional')} <span className="text-primary">{t('experience.title', 'Journey')}</span>
+                {t('experience.titlePart1', 'Professional')} <span className="text-primary">{t('experience.titlePart2', 'Journey')}</span>
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
                 {t('experience.subtitle', 'Key roles and projects that have shaped my career')}
@@ -667,7 +665,7 @@ export default function Home() {
           <div className="max-w-6xl w-full">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
-                {t('skills.title', 'Skills &')} <span className="text-primary">{t('skills.titleHighlight', 'Expertise')}</span>
+                {t('skills.title', 'Skills')} & <span className="text-primary">{t('skills.titleHighlight', 'Expertise')}</span>
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
                 {t('skills.subtitle', 'A comprehensive toolkit built through hands-on experience and continuous learning')}
@@ -921,7 +919,7 @@ export default function Home() {
           <div className="max-w-4xl w-full">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
-                {t('languages.title', 'Languages &')} <span className="text-primary">{t('languages.titleHighlight', 'Communication')}</span>
+                {t('languages.title', 'Languages')} & <span className="text-primary">{t('languages.titleHighlight', 'Communication')}</span>
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
                 {t('languages.subtitle', 'Spoken languages and communication proficiency')}

@@ -15,7 +15,7 @@
     "about": {
         "title": "Om mig",
         "heading": "Passionerad om att",
-        "headingHighlight": "Bygga lösningar",
+        "headingHighlight": "bygga lösningar",
         "whoIAm": "Vem jag är",
         "bio": "Hej! Jag är Fredrik, en fullstack-utvecklare baserad i Stockholm, Sverige. Jag specialiserar mig på att skapa eleganta och högpresterande webbapplikationer som löser verkliga problem. Min resa inom mjukvaruutveckling började med en fascination för hur saker fungerar under huven. Idag kombinerar jag denna nyfikenhet med praktisk erfarenhet av moderna webteknologier för att bygga lösningar som användare älskar.",
         "extraInfo": "När jag inte programmerar hittar du mig som utforskar nya teknologier, bidrar till öppen källkod eller delar kunskap med utvecklargemenskapen.",
@@ -26,7 +26,8 @@
         "downloadPrintCV": "Ladda ner / Skriv ut CV"
     },
     "values": {
-        "title": "Kärnvärden",
+        "titleCore": "Kärn",
+        "titleHighlight": "värden",
         "subtitle": "De principer som styr mitt förhållningssätt till mjukvaruutveckling",
         "items": {
             "cleanCode": {
@@ -48,22 +49,23 @@
         }
     },
     "experience": {
-        "title": "Min professionella resa",
+        "titlePart1": "Min professionella",
+        "titlePart2": "resa",
         "subtitle": "Nyckelroller och projekt som har format min karriär"
     },
     "education": {
-        "title": "Utbildning & Lärande",
-        "titleHighlight": "Utbildning",
+        "title": "Utbildning",
+        "titleHighlight": "Lärande",
         "subtitle": "Kontinuerlig tillväxt genom formell utbildning och praktisk inlärning"
     },
     "skills": {
-        "title": "Kunskaper & Expertis",
+        "title": "Kunskaper",
         "titleHighlight": "Expertis",
         "subtitle": "En omfattande verktygslåda byggd genom praktisk erfarenhet och kontinuerligt lärande"
     },
     "projects": {
         "portfolio": "Portfölj",
-        "featured": "Framhävda",
+        "featured": "Utvalda",
         "featuredHighlight": "Projekt",
         "subtitle": "Utforska min kompletta projektportfölj, från företagslösningar till innovativa verktyg. Varje projekt representerar en unik utmaning och en lärandeerfarenhet.",
         "filter": "Filter:",
@@ -72,17 +74,17 @@
         "viewProject": "Visa projekt"
     },
     "certifications": {
-        "title": "Certifikationer & Prestationer",
-        "titleHighlight": "Certifikationer",
+        "title": "Certifikationer",
+        "titleHighlight": "Prestationer",
         "subtitle": "Professionella certifikationer och erkända prestationer"
     },
     "languages": {
-        "title": "Språk & Kommunikation",
+        "title": "Språk",
         "titleHighlight": "Kommunikation",
         "subtitle": "Talade språk och kommunikativ förmåga"
     },
     "contact": {
-        "title": "Låt oss koppla ihop",
+        "title": "Låt oss",
         "titleHighlight": "koppla ihop",
         "subtitle": "Jag är alltid öppen för att diskutera nya projekt, kreativa idéer eller möjligheter att vara del av din vision.",
         "email": "E-post",
