@@ -4,11 +4,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { useLanguage } from "@/components/LanguageProvider";
-import { Code2, Database, Cloud, Wrench, Users, Languages, Lightbulb, Target, Award, Globe } from "lucide-react";
+import { Code2, Database, Cloud, Wrench, Users, Languages, Lightbulb, Target, Award, Globe, Star, Zap, Shield, Heart } from "lucide-react";
 
 // Import both portfolio data files statically
 import portfolioEn from '@/data/portfolio-en.json';
 import portfolioSv from '@/data/portfolio-sv.json';
+
+// Importera allmänna cv
+import cvAllmänt from '@/data/cv_allmant_sv.json';
 
 interface Experience {
   title: string;
@@ -76,10 +79,20 @@ interface Language {
 export default function Home() {
   const { language, t } = useLanguage();
 
-  // Select portfolio data based on language
-  const portfolioData = language === 'sv' ? portfolioSv : portfolioEn;
+  // CV TYPE SWITCHER
+  // För att visa allmänna CV:t (butiksarbete, etc), ändra till: const CV_TYPE = 'general';
+  // För att visa tekniska CV:t (default för deployed page), använd: const CV_TYPE = 'tech';
+  const CV_TYPE: string = "tech"; // 'tech' eller 'general'
 
-  const { personal, skills, projects, experience, education, values, certifications, spokenLanguages } = portfolioData;
+  // Select portfolio data based on CV type and language
+  const portfolioData = (CV_TYPE === "general")
+    ? cvAllmänt
+    : (language === 'sv' ? portfolioSv : portfolioEn);
+
+  const { personal, skills, experience, education, values } = portfolioData;
+  const projects = 'projects' in portfolioData ? portfolioData.projects : [];
+  const certifications = 'certifications' in portfolioData ? portfolioData.certifications : [];
+  const spokenLanguages = 'spokenLanguages' in portfolioData ? portfolioData.spokenLanguages : [];
   const [selectedFilter, setSelectedFilter] = useState("All");
   const [showCV, setShowCV] = useState(false);
   const cvRef = useRef<HTMLDivElement>(null);
@@ -103,7 +116,11 @@ export default function Home() {
     'Cloud': Cloud,
     'Wrench': Wrench,
     'Users': Users,
-    'Languages': Languages
+    'Languages': Languages,
+    'Star': Star,
+    'Zap': Zap,
+    'Shield': Shield,
+    'Heart': Heart
   };
 
   // Convert skills object to array with icons
@@ -111,7 +128,7 @@ export default function Home() {
     const cat = category as SkillCategory;
     return {
       ...cat,
-      icon: iconMap[cat.icon as keyof typeof iconMap]
+      icon: iconMap[cat.icon as keyof typeof iconMap] || Users // Fallback till Users om ikonen inte finns
     };
   });
 
@@ -172,15 +189,17 @@ export default function Home() {
 
             {/* Social Links */}
             <div className="flex gap-3 sm:gap-4">
-              <Link
-                href={personal.social.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 sm:p-3 bg-secondary hover:bg-accent rounded-lg transition-all duration-300 group border border-border"
-                aria-label="GitHub"
-              >
-                <Github className="w-5 h-5 text-secondary-foreground group-hover:text-accent-foreground transition-colors" />
-              </Link>
+              {'github' in personal.social && personal.social.github && (
+                <Link
+                  href={personal.social.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 sm:p-3 bg-secondary hover:bg-accent rounded-lg transition-all duration-300 group border border-border"
+                  aria-label="GitHub"
+                >
+                  <Github className="w-5 h-5 text-secondary-foreground group-hover:text-accent-foreground transition-colors" />
+                </Link>
+              )}
 
               <Link
                 href={personal.social.linkedin}
@@ -482,7 +501,7 @@ export default function Home() {
               </div>
 
               {/* CV Footer */}
-              <div className="print:min-h-[300px] cv-footer p-6 sm:p-8 print:p-6 bg-secondary/30 text-center text-xs sm:text-sm text-muted-foreground print:text-gray-600 print:border-t print:border-gray-300">
+              <div className="print:min-h-[625px] flex items-end justify-center cv-footer p-6 sm:p-8 print:p-6 bg-secondary/30 text-center text-xs sm:text-sm text-muted-foreground print:text-gray-600 print:border-t print:border-gray-300">
                 <p>{t('cv.referencesAvailable', 'References available upon request')}</p>
               </div>
             </div>
@@ -507,9 +526,12 @@ export default function Home() {
                   'Code2': Code2,
                   'Lightbulb': Lightbulb,
                   'Target': Target,
-                  'Users': Users
+                  'Users': Users,
+                  'Heart': Users, // Fallback for Heart icon
+                  'Zap': Lightbulb, // Fallback for Zap icon
+                  'Shield': Target // Fallback for Shield icon
                 };
-                const Icon = valueIconMap[value.icon as keyof typeof valueIconMap];
+                const Icon = valueIconMap[value.icon as keyof typeof valueIconMap] || Users;
                 return (
                   <div
                     key={index}
@@ -872,84 +894,88 @@ export default function Home() {
         </section>
 
         {/* Certifications Section */}
-        <section id="certifications" className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-12 sm:py-20 print:hidden">
-          <div className="max-w-4xl w-full">
-            <div className="text-center mb-12 sm:mb-16">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
-                <span className="text-primary">{t('certifications.titleHighlight', 'Certifications')}</span> & {t('certifications.title', 'Achievements')}
-              </h2>
-              <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-                {t('certifications.subtitle', 'Professional certifications and recognized achievements')}
-              </p>
-            </div>
+        {certifications && certifications.length > 0 && (
+          <section id="certifications" className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-12 sm:py-20 print:hidden">
+            <div className="max-w-4xl w-full">
+              <div className="text-center mb-12 sm:mb-16">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
+                  <span className="text-primary">{t('certifications.titleHighlight', 'Certifications')}</span> & {t('certifications.title', 'Achievements')}
+                </h2>
+                <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+                  {t('certifications.subtitle', 'Professional certifications and recognized achievements')}
+                </p>
+              </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-              {certifications.map((cert: Certification, index: number) => (
-                <div
-                  key={index}
-                  className="p-5 sm:p-6 bg-card backdrop-blur-sm rounded-2xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-                >
-                  <div className="flex items-start gap-3 sm:gap-4">
-                    <div className="p-2.5 sm:p-3 bg-primary/10 rounded-lg shrink-0">
-                      <Award className="w-5 sm:w-6 h-5 sm:h-6 text-primary" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="text-base sm:text-lg font-bold text-card-foreground">
-                        {cert.name}
-                      </h3>
-                      <p className="text-primary font-semibold text-xs sm:text-sm">
-                        {cert.issuer}
-                      </p>
-                      <span className="text-xs sm:text-sm text-muted-foreground">
-                        {cert.credentialId}
-                      </span>
-                      <p className="text-muted-foreground text-xs sm:text-sm mt-1">
-                        {cert.date}
-                      </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+                {certifications.map((cert: Certification, index: number) => (
+                  <div
+                    key={index}
+                    className="p-5 sm:p-6 bg-card backdrop-blur-sm rounded-2xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                  >
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <div className="p-2.5 sm:p-3 bg-primary/10 rounded-lg shrink-0">
+                        <Award className="w-5 sm:w-6 h-5 sm:h-6 text-primary" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-base sm:text-lg font-bold text-card-foreground">
+                          {cert.name}
+                        </h3>
+                        <p className="text-primary font-semibold text-xs sm:text-sm">
+                          {cert.issuer}
+                        </p>
+                        <span className="text-xs sm:text-sm text-muted-foreground">
+                          {cert.credentialId}
+                        </span>
+                        <p className="text-muted-foreground text-xs sm:text-sm mt-1">
+                          {cert.date}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Languages Section */}
-        <section id="languages" className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-12 sm:py-20 print:hidden">
-          <div className="max-w-4xl w-full">
-            <div className="text-center mb-12 sm:mb-16">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
-                {t('languages.title', 'Languages')} & <span className="text-primary">{t('languages.titleHighlight', 'Communication')}</span>
-              </h2>
-              <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-                {t('languages.subtitle', 'Spoken languages and communication proficiency')}
-              </p>
-            </div>
+        {spokenLanguages && spokenLanguages.length > 0 && (
+          <section id="languages" className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-12 sm:py-20 print:hidden">
+            <div className="max-w-4xl w-full">
+              <div className="text-center mb-12 sm:mb-16">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
+                  {t('languages.title', 'Languages')} & <span className="text-primary">{t('languages.titleHighlight', 'Communication')}</span>
+                </h2>
+                <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+                  {t('languages.subtitle', 'Spoken languages and communication proficiency')}
+                </p>
+              </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-              {spokenLanguages.map((lang: Language, index: number) => (
-                <div
-                  key={index}
-                  className="p-6 sm:p-8 bg-card backdrop-blur-sm rounded-2xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-                >
-                  <div className="flex items-center gap-3 sm:gap-4">
-                    <div className="p-2.5 sm:p-3 bg-primary/10 rounded-lg shrink-0">
-                      <Globe className="w-5 sm:w-6 h-5 sm:h-6 text-primary" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="text-xl sm:text-2xl font-bold text-card-foreground">
-                        {lang.language}
-                      </h3>
-                      <p className="text-sm sm:text-base text-muted-foreground font-semibold">
-                        {lang.proficiency}
-                      </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                {spokenLanguages.map((lang: Language, index: number) => (
+                  <div
+                    key={index}
+                    className="p-6 sm:p-8 bg-card backdrop-blur-sm rounded-2xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                  >
+                    <div className="flex items-center gap-3 sm:gap-4">
+                      <div className="p-2.5 sm:p-3 bg-primary/10 rounded-lg shrink-0">
+                        <Globe className="w-5 sm:w-6 h-5 sm:h-6 text-primary" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-xl sm:text-2xl font-bold text-card-foreground">
+                          {lang.language}
+                        </h3>
+                        <p className="text-sm sm:text-base text-muted-foreground font-semibold">
+                          {lang.proficiency}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Contact Section */}
         <section id="contact" className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-12 sm:py-20 print:hidden">
