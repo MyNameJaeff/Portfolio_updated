@@ -5,7 +5,7 @@
         "about": "Om mig",
         "skills": "Kunskaper",
         "projects": "Projekt",
-        "contact": "Kontakt"
+        "contact": "Kontakta"
     },
     "hero": {
         "portfolio": "Portfölj",
@@ -85,7 +85,7 @@
     },
     "contact": {
         "title": "Låt oss",
-        "titleHighlight": "koppla ihop",
+        "titleHighlight": "ta kontakt",
         "subtitle": "Jag är alltid öppen för att diskutera nya projekt, kreativa idéer eller möjligheter att vara del av din vision.",
         "email": "E-post",
         "phone": "Telefon",
