@@ -501,7 +501,10 @@ export default function Home() {
               </div>
 
               {/* CV Footer */}
-              <div className="print:min-h-[625px] flex items-end justify-center cv-footer p-6 sm:p-8 print:p-6 bg-secondary/30 text-center text-xs sm:text-sm text-muted-foreground print:text-gray-600 print:border-t print:border-gray-300">
+              <div className={CV_TYPE === "general"
+                ? "print:min-h-180 flex items-end justify-center cv-footer p-6 sm:p-8 print:p-6 bg-secondary/30 text-center text-xs sm:text-sm text-muted-foreground print:text-gray-600 print:border-t print:border-gray-300"
+                : "print:min-h-86.5 flex items-end justify-center cv-footer p-6 sm:p-8 print:p-6 bg-secondary/30 text-center text-xs sm:text-sm text-muted-foreground print:text-gray-600 print:border-t print:border-gray-300"
+              }>
                 <p>{t('cv.referencesAvailable', 'References available upon request')}</p>
               </div>
             </div>
