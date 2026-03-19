@@ -98,7 +98,7 @@
     },
     "experience": [
         {
-            "logo": "/companyLogos/Coneqt.png",
+            "logo": "/companyLogos/coneqt.png",
             "title": "Intern at Coneqt",
             "company": "Coneqt",
             "period": "2026-02 -> Present",
@@ -120,7 +120,7 @@
             ]
         },
         {
-            "logo": "/companyLogos/Aveno.png",
+            "logo": "/companyLogos/aveno.png",
             "title": "Fullstack Developer",
             "company": "Aveno CRM",
             "period": "2025 - Present",

@@ -98,7 +98,7 @@
     },
     "experience": [
         {
-            "logo": "/companyLogos/Coneqt.png",
+            "logo": "/companyLogos/coneqt.png",
             "title": "Praktikant hos Coneqt",
             "company": "Coneqt",
             "period": "2026-02 -> Nutid",
@@ -120,7 +120,7 @@
             ]
         },
         {
-            "logo": "/companyLogos/Aveno.png",
+            "logo": "/companyLogos/aveno.png",
             "title": "Fullstack-utvecklare",
             "company": "Aveno",
             "period": "2025-10 -> Nutid",
