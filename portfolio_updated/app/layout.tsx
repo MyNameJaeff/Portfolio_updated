@@ -4,6 +4,9 @@ import "./globals.css";
 import { Providers } from "@/components/PageProviders";
 import { Analytics } from "@vercel/analytics/next"
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
