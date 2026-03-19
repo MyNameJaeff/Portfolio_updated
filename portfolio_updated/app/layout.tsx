@@ -3,8 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/PageProviders";
 import { Analytics } from "@vercel/analytics/next"
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const geistSans = Geist({
@@ -32,6 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <SpeedInsights />
         <Providers>
           {children}
           <Analytics />
