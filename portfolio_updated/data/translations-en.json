@@ -89,7 +89,24 @@
         "subtitle": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
         "email": "Email",
         "phone": "Phone",
-        "connectLinkedin": "Connect on LinkedIn"
+        "connectLinkedin": "Connect on LinkedIn",
+        "form": {
+            "name": "Name",
+            "email": "Email",
+            "subject": "Subject",
+            "message": "Message",
+            "namePlaceholder": "Your name",
+            "emailPlaceholder": "you@example.com",
+            "subjectPlaceholder": "What is this about?",
+            "messagePlaceholder": "Tell me about your project or question...",
+            "submit": "Send message",
+            "sending": "Sending...",
+            "sendSuccess": "Message sent. I will get back to you soon.",
+            "sendError": "Could not send your message.",
+            "validationError": "Please fill out all fields correctly.",
+            "notConfigured": "Contact form endpoint is not configured.",
+            "emailDirect": "Email me directly"
+        }
     },
     "cv": {
         "professionalSummary": "Professional Summary",

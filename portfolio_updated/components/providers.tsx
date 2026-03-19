@@ -4,9 +4,12 @@ import { type ThemeProviderProps } from "next-themes";
 import { ThemeSwitch } from "@/components/ThemeSwitch";
 import StaggeredMenu from "@/components/StaggeredMenu";
 import LiquidChrome from "@/components/LiquidChrome";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useMemo } from "react";
 import { LanguageProvider, useLanguage } from "@/components/LanguageProvider";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+
+const MOBILE_BREAKPOINT = 768;
+const LOADING_DELAY_MS = 100;
 
 // Create a separate component that uses the theme
 function ThemedLayout({ children }: { children: React.ReactNode }) {
@@ -18,12 +21,20 @@ function ThemedLayout({ children }: { children: React.ReactNode }) {
     const [isMobile, setIsMobile] = useState(false);
     const menuRef = useRef<{ closeMenu: () => void } | null>(null);
 
+    const menuItems = useMemo(() => [
+        { label: t('nav.home', 'Home'), link: "#home", ariaLabel: t('nav.home', 'Go to homepage') },
+        { label: t('nav.about', 'About'), link: "#about", ariaLabel: t('nav.about', 'Learn more about me') },
+        { label: t('nav.skills', 'Skills'), link: "#skills", ariaLabel: t('nav.skills', 'View my skills') },
+        { label: t('nav.projects', 'Projects'), link: "#projects", ariaLabel: t('nav.projects', 'View my projects') },
+        { label: t('nav.contact', 'Contact'), link: "#contact", ariaLabel: t('nav.contact', 'Get in touch with me') }
+    ], [t]);
+
     useEffect(() => {
         setMounted(true);
 
         // Check if mobile device
         const checkMobile = () => {
-            setIsMobile(window.innerWidth < 768);
+            setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
         };
         checkMobile();
         window.addEventListener('resize', checkMobile);
@@ -45,13 +56,13 @@ function ThemedLayout({ children }: { children: React.ReactNode }) {
         // Set loading to false after a short delay to ensure smooth transition
         const timer = setTimeout(() => {
             setIsLoading(false);
-        }, 100);
+        }, LOADING_DELAY_MS);
 
         // Add click handler for mobile navigation links
         const handleLinkClick = (e: MouseEvent) => {
             const target = e.target as HTMLElement;
             const link = target.closest('a[href^="#"]');
-            if (link && window.innerWidth < 768 && menuRef.current) {
+            if (link && window.innerWidth < MOBILE_BREAKPOINT && menuRef.current) {
                 menuRef.current.closeMenu();
             }
         };
@@ -98,13 +109,7 @@ function ThemedLayout({ children }: { children: React.ReactNode }) {
             {!isNotFound && !isLoading && (
                 <StaggeredMenu
                     ref={menuRef}
-                    items={[
-                        { label: t('nav.home', 'Home'), link: "#home", ariaLabel: t('nav.home', 'Go to homepage') },
-                        { label: t('nav.about', 'About'), link: "#about", ariaLabel: t('nav.about', 'Learn more about me') },
-                        { label: t('nav.skills', 'Skills'), link: "#skills", ariaLabel: t('nav.skills', 'View my skills') },
-                        { label: t('nav.projects', 'Projects'), link: "#projects", ariaLabel: t('nav.projects', 'View my projects') },
-                        { label: t('nav.contact', 'Contact'), link: "#contact", ariaLabel: t('nav.contact', 'Get in touch with me') },
-                    ]}
+                    items={menuItems}
                     isFixed
                     accentColor="var(--chart-4)"
                     colors={[

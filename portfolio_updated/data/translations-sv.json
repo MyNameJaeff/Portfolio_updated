@@ -3,7 +3,7 @@
     "nav": {
         "home": "Hem",
         "about": "Om mig",
-        "skills": "Kunskaper",
+        "skills": "Tekniker",
         "projects": "Projekt",
         "contact": "Kontakta"
     },
@@ -18,7 +18,7 @@
         "headingHighlight": "bygga lösningar",
         "whoIAm": "Vem jag är",
         "bio": "Hej! Jag är Fredrik, en fullstack-utvecklare baserad i Stockholm, Sverige. Jag specialiserar mig på att skapa eleganta och högpresterande webbapplikationer som löser verkliga problem. Min resa inom mjukvaruutveckling började med en fascination för hur saker fungerar under huven. Idag kombinerar jag denna nyfikenhet med praktisk erfarenhet av moderna webteknologier för att bygga lösningar som användare älskar.",
-        "extraInfo": "När jag inte programmerar hittar du mig som utforskar nya teknologier, bidrar till öppen källkod eller delar kunskap med utvecklargemenskapen.",
+        "extraInfo": "När jag inte programmerar hittar du mig som utforskar nya teknologier, umgås med vänner och familj, eller sitter och läser om de senaste trenderna inom teknikvärlden.",
         "location": "📍 Plats",
         "availability": "📧 Tillgänglighet",
         "viewCV": "Visa CV",
@@ -59,8 +59,8 @@
         "subtitle": "Kontinuerlig tillväxt genom formell utbildning och praktisk inlärning"
     },
     "skills": {
-        "title": "Kunskaper",
-        "titleHighlight": "Expertis",
+        "title": "Tekniska",
+        "titleHighlight": "kunskaper",
         "subtitle": "En omfattande verktygslåda byggd genom praktisk erfarenhet och kontinuerligt lärande"
     },
     "projects": {
@@ -89,7 +89,24 @@
         "subtitle": "Jag är alltid öppen för att diskutera nya projekt, kreativa idéer eller möjligheter att vara del av din vision.",
         "email": "E-post",
         "phone": "Telefon",
-        "connectLinkedin": "Anslut på LinkedIn"
+        "connectLinkedin": "Anslut på LinkedIn",
+        "form": {
+            "name": "Namn",
+            "email": "E-post",
+            "subject": "Ämne",
+            "message": "Meddelande",
+            "namePlaceholder": "Ditt namn",
+            "emailPlaceholder": "du@exempel.se",
+            "subjectPlaceholder": "Vad gäller det?",
+            "messagePlaceholder": "Berätta om ditt projekt eller din fråga...",
+            "submit": "Skicka meddelande",
+            "sending": "Skickar...",
+            "sendSuccess": "Meddelandet skickades. Jag återkommer så snart jag kan.",
+            "sendError": "Kunde inte skicka ditt meddelande.",
+            "validationError": "Vänligen fyll i alla fält korrekt.",
+            "notConfigured": "Kontaktformulärets endpoint är inte konfigurerad.",
+            "emailDirect": "Maila mig direkt"
+        }
     },
     "cv": {
         "professionalSummary": "Professionell sammanfattning",

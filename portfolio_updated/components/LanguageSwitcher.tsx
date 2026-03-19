@@ -4,6 +4,10 @@ import { LANGUAGES } from "@/lib/i18n";
 
 export function LanguageSwitcher() {
     const { language, setLanguage } = useLanguage();
+    const languageEntries = Object.entries(LANGUAGES) as Array<
+        [keyof typeof LANGUAGES, (typeof LANGUAGES)[keyof typeof LANGUAGES]]
+    >;
+    const lastLanguageIndex = languageEntries.length - 1;
 
     return (
         <div
@@ -11,21 +15,20 @@ export function LanguageSwitcher() {
             role="radiogroup"
             aria-label="Language selector"
         >
-            {Object.entries(LANGUAGES).map(([value, { name, flag }], index) => {
+            {languageEntries.map(([value, { name, flag }], index) => {
                 const isActive = language === value;
-                const langValue = value as keyof typeof LANGUAGES;
 
                 return (
                     <button
                         key={value}
-                        onClick={() => setLanguage(langValue)}
+                        onClick={() => setLanguage(value)}
                         role="radio"
                         aria-checked={isActive}
                         aria-label={`${name} language`}
                         className={`
                             relative flex items-center justify-center flex-1 gap-2 px-2 py-1
                             ${index === 0 ? "rounded-l-full" : ""}
-                            ${index === Object.entries(LANGUAGES).length - 1 ? "rounded-r-full" : ""} 
+                            ${index === lastLanguageIndex ? "rounded-r-full" : ""} 
                             text-sm font-medium
                             transition-all duration-200 ease-in-out
                             ${isActive

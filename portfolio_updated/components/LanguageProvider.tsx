@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState, useCallback, useMemo } from 'react';
 import { Language, DEFAULT_LANGUAGE, getLanguageFromNavigator, getStoredLanguage, setStoredLanguage } from '@/lib/i18n';
 import type en from '@/data/translations-en.json';
 
@@ -18,23 +18,8 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
     const [language, setLanguageState] = useState<Language>(DEFAULT_LANGUAGE);
     const [translations, setTranslations] = useState<Translations | null>(null);
-    const [mounted, setMounted] = useState(false);
 
-    useEffect(() => {
-        // Get language preference
-        const storedLang = getStoredLanguage();
-        const detectedLang = getLanguageFromNavigator();
-        const initialLang = storedLang || detectedLang;
-
-        setLanguageState(initialLang);
-
-        // Load translations
-        loadTranslations(initialLang);
-
-        setMounted(true);
-    }, []);
-
-    const loadTranslations = async (lang: Language) => {
+    const loadTranslations = useCallback(async (lang: Language) => {
         try {
             // eslint-disable-next-line @next/next/no-assign-module-variable
             const module = await import(`@/data/translations-${lang}.json`);
@@ -45,44 +30,53 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
             const fallback = await import(`@/data/translations-en.json`);
             setTranslations(fallback.default);
         }
-    };
+    }, []);
 
-    const setLanguage = (lang: Language) => {
+    useEffect(() => {
+        // Get language preference
+        const storedLang = getStoredLanguage();
+        const detectedLang = getLanguageFromNavigator();
+        const initialLang = storedLang || detectedLang;
+
+        setLanguageState(initialLang);
+        loadTranslations(initialLang);
+    }, [loadTranslations]);
+
+    const setLanguage = useCallback((lang: Language) => {
         setLanguageState(lang);
         setStoredLanguage(lang);
-        loadTranslations(lang);
+        void loadTranslations(lang);
 
         // Update document lang attribute
         if (typeof document !== 'undefined') {
             document.documentElement.lang = lang;
         }
-    };
+    }, [loadTranslations]);
 
-    const t = (key: string, defaultValue: string = key): string => {
+    const t = useCallback((key: string, defaultValue: string = key): string => {
         if (!translations) return defaultValue;
 
         const keys = key.split('.');
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        let current: any = translations;
+        let current: unknown = translations;
 
         for (const k of keys) {
             if (current && typeof current === 'object' && k in current) {
-                current = current[k];
+                current = (current as Record<string, unknown>)[k];
             } else {
                 return defaultValue;
             }
         }
 
         return typeof current === 'string' ? current : defaultValue;
-    };
+    }, [translations]);
 
     // Always provide a context value, even before mounted
-    const contextValue: LanguageContextType = {
+    const contextValue: LanguageContextType = useMemo(() => ({
         language,
         setLanguage,
         t,
         translations: translations || {} as Translations
-    };
+    }), [language, setLanguage, t, translations]);
 
     return (
         <LanguageContext.Provider value={contextValue}>
