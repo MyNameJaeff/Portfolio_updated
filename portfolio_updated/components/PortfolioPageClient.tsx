@@ -86,6 +86,7 @@ export interface Personal {
     email: string;
     linkedin: string;
     github?: string;
+    portfolio?: string;
   };
 }
 
@@ -569,6 +570,22 @@ function CVSection({
                   <ExternalLink className="hidden print:inline ml-1 w-3 h-3 align-[-1px]" aria-hidden="true" />
                 </a>
               </div>
+              {personal.social.portfolio && (
+                <div className="hidden print:inline">
+                  <div className="flex items-center gap-2 sm:col-span-2">
+                    <Folder className="w-3.5 sm:w-4 h-3.5 sm:h-4 print:w-3 print:h-3 print:text-gray-700 shrink-0" />
+                    <a
+                      href={personal.social.portfolio}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline opacity-95 print:opacity-100 print:text-gray-700 truncate"
+                    >
+                      Portfolio
+                      <ExternalLink className="inline ml-1 w-3 h-3 align-[-1px]" aria-hidden="true" />
+                    </a>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 
@@ -1501,7 +1518,7 @@ function GlobalStyles() {
           page-break-inside: avoid !important; break-inside: avoid !important;
         }
         .cv-footer {
-          margin-top: 2rem !important;
+          margin-top: 3rem !important;
           page-break-before: avoid !important;
           break-before: avoid !important;
         }

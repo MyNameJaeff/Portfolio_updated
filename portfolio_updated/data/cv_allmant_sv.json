@@ -1,187 +1,188 @@
 {
-    "personal": {
-        "name": "Fredrik Andersson",
-        "title": "Driven och serviceinriktad med god laganda",
-        "tagline": "Engagerad person som trivs med kundkontakt, teamwork och att skapa positiva upplevelser. Snabblärare med stark arbetsmoral.",
-        "location": "Stockholm, Sverige",
-        "email": "fredrik04@hotmail.com",
-        "phone": "073 995 97 84",
-        "bio": "Hej! Jag är Fredrik, en 21-årig stockholmare som söker nya utmaningar inom service och kundkontakt. Jag trivs i miljöer där man arbetar tillsammans mot gemensamma mål och där jag kan bidra med min positiva attityd och problemlösningsförmåga. Jag är en snabblärd och ansvarsfull person som alltid strävar efter att göra mitt bästa i allt jag tar mig an. Utanför jobbet gillar jag att utforska ny teknik och umgås med vänner och familj. ",
-        "availability": "Tillgänglig för anställning",
-        "social": {
-            "linkedin": "https://www.linkedin.com/in/fredrik-andersson-2006412aa/?locale=sv_SE",
-            "email": "mailto:fredrik04@hotmail.com"
-        }
+  "personal": {
+    "name": "Fredrik Andersson",
+    "title": "Driven och serviceinriktad med god laganda",
+    "tagline": "Engagerad person som trivs med kundkontakt, teamwork och att skapa positiva upplevelser. Snabblärare med stark arbetsmoral.",
+    "location": "Stockholm, Sverige",
+    "email": "fredrik04@hotmail.com",
+    "phone": "073 995 97 84",
+    "bio": "Hej! Jag är Fredrik, en 21-årig stockholmare som söker nya utmaningar inom service och kundkontakt. Jag trivs i miljöer där man arbetar tillsammans mot gemensamma mål och där jag kan bidra med min positiva attityd och problemlösningsförmåga. Jag är en snabblärd och ansvarsfull person som alltid strävar efter att göra mitt bästa i allt jag tar mig an. Utanför jobbet gillar jag att utforska ny teknik och umgås med vänner och familj. ",
+    "availability": "Tillgänglig för anställning",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/fredrik-andersson-2006412aa/?locale=sv_SE",
+      "email": "mailto:fredrik04@hotmail.com",
+      "portfolio": "https://portfolio-fredrik-andersson.vercel.app/"
+    }
+  },
+  "skills": {
+    "kundservice": {
+      "title": "Kundservice & Kommunikation",
+      "icon": "Users",
+      "color": "from-blue-500 to-cyan-500",
+      "skills": [
+        "Kundkontakt",
+        "Serviceinriktad",
+        "Kommunikation",
+        "Lyssnande",
+        "Problemlösning",
+        "Positiv attityd"
+      ]
     },
-    "skills": {
-        "kundservice": {
-            "title": "Kundservice & Kommunikation",
-            "icon": "Users",
-            "color": "from-blue-500 to-cyan-500",
-            "skills": [
-                "Kundkontakt",
-                "Serviceinriktad",
-                "Kommunikation",
-                "Lyssnande",
-                "Problemlösning",
-                "Positiv attityd"
-            ]
-        },
-        "teamwork": {
-            "title": "Samarbete & Lagarbete",
-            "icon": "Users",
-            "color": "from-green-500 to-emerald-500",
-            "skills": [
-                "Teamwork",
-                "Samarbetsförmåga",
-                "Flexibilitet",
-                "Ansvarsfull",
-                "Pålitlig",
-                "Stödja kollegor"
-            ]
-        },
-        "personliga": {
-            "title": "Personliga Egenskaper",
-            "icon": "Star",
-            "color": "from-purple-500 to-pink-500",
-            "skills": [
-                "Snabblärare",
-                "Noggrann",
-                "Strukturerad",
-                "Stresstålig",
-                "Initiativtagande",
-                "Punktlig"
-            ]
-        },
-        "praktiska": {
-            "title": "Praktiska Färdigheter",
-            "icon": "Wrench",
-            "color": "from-orange-500 to-red-500",
-            "skills": [
-                "Datorvana",
-                "Lagerarbete",
-                "Varumottagning",
-                "Hyllning",
-                "Orderhantering"
-            ]
-        }
+    "teamwork": {
+      "title": "Samarbete & Lagarbete",
+      "icon": "Users",
+      "color": "from-green-500 to-emerald-500",
+      "skills": [
+        "Teamwork",
+        "Samarbetsförmåga",
+        "Flexibilitet",
+        "Ansvarsfull",
+        "Pålitlig",
+        "Stödja kollegor"
+      ]
     },
-    "experience": [
-        {
-            "title": "Utvecklare hos Aveno",
-            "company": "Aveno CRM",
-            "period": "2025 - Nutid",
-            "location": "Stockholm, Sverige",
-            "description": "Arbetar som utvecklare i ett team som skapar CRM-lösningar för små och medelstora företag. Fokus på problemlösning, samarbete och att leverera högkvalitativa lösningar tillsammans med kollegor.",
-            "responsibilities": [
-                "Delta i teammöten för att planera och prioritera arbetsuppgifter",
-                "Samarbeta med kollegor för att lösa tekniska utmaningar",
-                "Bidra till kodgranskningar och dela kunskap inom teamet",
-                "Arbeta strukturerat för att möta deadlines och leverera enligt krav",
-                "Kommunicera effektivt med teammedlemmar för att säkerställa smidigt samarbete"
-            ],
-            "skills": [
-                "Teamwork",
-                "Kommunikation",
-                "Problemlösning",
-                "Ansvarstagande",
-                "Strukturerat arbete",
-                "Snabblärd"
-            ]
-        }
-    ],
-    "education": [
-        {
-            "degree": "Yrkesutbildning - Fullstack-utveckling C# .NET",
-            "institution": "ChasAcademy",
-            "period": "2024 - Nutid",
-            "location": "Stockholm, Sverige",
-            "description": "Intensiv yrkesutbildning med fokus på fullstack-utveckling med C# .NET. Utvecklade tekniska färdigheter samtidigt som jag förbättrade min förmåga att arbeta i team och lösa problem effektivt.",
-            "skills": [
-                "Problemlösning",
-                "Strukturerat arbete",
-                "Projektarbete i grupp",
-                "Självständigt arbete",
-                "Kommunikation",
-                "Ansvarsfull",
-                "Tidhantering"
-            ]
-        },
-        {
-            "degree": "Tekniskt Basår - IT & Medieteknik",
-            "institution": "NTI Södertörn",
-            "period": "2023 - 2024",
-            "location": "Stockholm, Sverige",
-            "description": "Förberedande år som stärkte mina grundläggande kunskaper inom IT och medieteknik. Fokuserade på att utveckla både tekniska och personliga färdigheter för framtida studier och yrkesliv.",
-            "skills": [
-                "Teamwork",
-                "Kommunikation",
-                "Projektarbete",
-                "Problemlösning",
-                "Anpassningsförmåga",
-                "Självständigt arbete",
-                "Tidhantering"
-            ]
-        },
-        {
-            "degree": "Gymnasieexamen - IT-programmet",
-            "institution": "NTI Södertörn",
-            "period": "2020 - 2023",
-            "location": "Stockholm, Sverige",
-            "description": "Treårigt gymnasieprogram med fokus på IT, kompletterat med kärnämnen som matematik, fysik och engelska. Utvecklade god arbetsmoral och förmåga att arbeta både självständigt och i grupp.",
-            "skills": [
-                "Problemlösning",
-                "Grupparbete",
-                "Matematik",
-                "Fysik",
-                "Engelska",
-                "Svenska",
-                "Ansvarstagande"
-            ]
-        }
-    ],
-    "values": [
-        {
-            "icon": "Heart",
-            "title": "Serviceinriktad",
-            "description": "Brinner för att ge god service och skapa positiva kundupplevelser"
-        },
-        {
-            "icon": "Users",
-            "title": "Lagspelare",
-            "description": "Trivs i team och gillar att stötta kollegor för att nå gemensamma mål"
-        },
-        {
-            "icon": "Zap",
-            "title": "Snabblärare",
-            "description": "Tar snabbt till mig nya arbetsuppgifter och rutiner"
-        },
-        {
-            "icon": "Shield",
-            "title": "Pålitlig",
-            "description": "Tar ansvar för mina arbetsuppgifter och är en trygg kollega"
-        }
-    ],
-    "languages": [
-        {
-            "language": "Svenska",
-            "proficiency": "Modersmål"
-        },
-        {
-            "language": "Engelska",
-            "proficiency": "Flytande i tal och skrift"
-        }
-    ],
-    "additionalInfo": {
-        "driverLicense": "Nej",
-        "availability": "Flexibel - kan arbeta kvällar och helger",
-        "startDate": "Omgående eller enligt överenskommelse",
-        "interests": [
-            "Teknik och innovation",
-            "Träning och hälsa",
-            "Problemlösning",
-            "Lära nytt"
-        ]
+    "personliga": {
+      "title": "Personliga Egenskaper",
+      "icon": "Star",
+      "color": "from-purple-500 to-pink-500",
+      "skills": [
+        "Snabblärare",
+        "Noggrann",
+        "Strukturerad",
+        "Stresstålig",
+        "Initiativtagande",
+        "Punktlig"
+      ]
     },
-    "references": "Lämnas på begäran"
+    "praktiska": {
+      "title": "Praktiska Färdigheter",
+      "icon": "Wrench",
+      "color": "from-orange-500 to-red-500",
+      "skills": [
+        "Datorvana",
+        "Lagerarbete",
+        "Varumottagning",
+        "Hyllning",
+        "Orderhantering"
+      ]
+    }
+  },
+  "experience": [
+    {
+      "title": "Utvecklare hos Aveno",
+      "company": "Aveno CRM",
+      "period": "2025 - Nutid",
+      "location": "Stockholm, Sverige",
+      "description": "Arbetar som utvecklare i ett team som skapar CRM-lösningar för små och medelstora företag. Fokus på problemlösning, samarbete och att leverera högkvalitativa lösningar tillsammans med kollegor.",
+      "responsibilities": [
+        "Delta i teammöten för att planera och prioritera arbetsuppgifter",
+        "Samarbeta med kollegor för att lösa tekniska utmaningar",
+        "Bidra till kodgranskningar och dela kunskap inom teamet",
+        "Arbeta strukturerat för att möta deadlines och leverera enligt krav",
+        "Kommunicera effektivt med teammedlemmar för att säkerställa smidigt samarbete"
+      ],
+      "skills": [
+        "Teamwork",
+        "Kommunikation",
+        "Problemlösning",
+        "Ansvarstagande",
+        "Strukturerat arbete",
+        "Snabblärd"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Yrkesutbildning - Fullstack-utveckling C# .NET",
+      "institution": "ChasAcademy",
+      "period": "2024 - Nutid",
+      "location": "Stockholm, Sverige",
+      "description": "Intensiv yrkesutbildning med fokus på fullstack-utveckling med C# .NET. Utvecklade tekniska färdigheter samtidigt som jag förbättrade min förmåga att arbeta i team och lösa problem effektivt.",
+      "skills": [
+        "Problemlösning",
+        "Strukturerat arbete",
+        "Projektarbete i grupp",
+        "Självständigt arbete",
+        "Kommunikation",
+        "Ansvarsfull",
+        "Tidhantering"
+      ]
+    },
+    {
+      "degree": "Tekniskt Basår - IT & Medieteknik",
+      "institution": "NTI Södertörn",
+      "period": "2023 - 2024",
+      "location": "Stockholm, Sverige",
+      "description": "Förberedande år som stärkte mina grundläggande kunskaper inom IT och medieteknik. Fokuserade på att utveckla både tekniska och personliga färdigheter för framtida studier och yrkesliv.",
+      "skills": [
+        "Teamwork",
+        "Kommunikation",
+        "Projektarbete",
+        "Problemlösning",
+        "Anpassningsförmåga",
+        "Självständigt arbete",
+        "Tidhantering"
+      ]
+    },
+    {
+      "degree": "Gymnasieexamen - IT-programmet",
+      "institution": "NTI Södertörn",
+      "period": "2020 - 2023",
+      "location": "Stockholm, Sverige",
+      "description": "Treårigt gymnasieprogram med fokus på IT, kompletterat med kärnämnen som matematik, fysik och engelska. Utvecklade god arbetsmoral och förmåga att arbeta både självständigt och i grupp.",
+      "skills": [
+        "Problemlösning",
+        "Grupparbete",
+        "Matematik",
+        "Fysik",
+        "Engelska",
+        "Svenska",
+        "Ansvarstagande"
+      ]
+    }
+  ],
+  "values": [
+    {
+      "icon": "Heart",
+      "title": "Serviceinriktad",
+      "description": "Brinner för att ge god service och skapa positiva kundupplevelser"
+    },
+    {
+      "icon": "Users",
+      "title": "Lagspelare",
+      "description": "Trivs i team och gillar att stötta kollegor för att nå gemensamma mål"
+    },
+    {
+      "icon": "Zap",
+      "title": "Snabblärare",
+      "description": "Tar snabbt till mig nya arbetsuppgifter och rutiner"
+    },
+    {
+      "icon": "Shield",
+      "title": "Pålitlig",
+      "description": "Tar ansvar för mina arbetsuppgifter och är en trygg kollega"
+    }
+  ],
+  "languages": [
+    {
+      "language": "Svenska",
+      "proficiency": "Modersmål"
+    },
+    {
+      "language": "Engelska",
+      "proficiency": "Flytande i tal och skrift"
+    }
+  ],
+  "additionalInfo": {
+    "driverLicense": "Nej",
+    "availability": "Flexibel - kan arbeta kvällar och helger",
+    "startDate": "Omgående eller enligt överenskommelse",
+    "interests": [
+      "Teknik och innovation",
+      "Träning och hälsa",
+      "Problemlösning",
+      "Lära nytt"
+    ]
+  },
+  "references": "Lämnas på begäran"
 }
