@@ -1,120 +1,120 @@
 {
-    "language": "English",
-    "nav": {
-        "home": "Home",
-        "about": "About",
-        "skills": "Skills",
-        "projects": "Projects",
-        "contact": "Contact"
-    },
-    "hero": {
-        "portfolio": "Portfolio",
-        "getInTouch": "Get in Touch",
-        "viewProjects": "View Projects"
-    },
-    "about": {
-        "title": "About Me",
-        "heading": "Passionate About",
-        "headingHighlight": "Building Solutions",
-        "whoIAm": "Who I Am",
-        "bio": "Hi! I'm Fredrik, a fullstack developer based in Stockholm, Sweden. I specialize in creating elegant, performant web applications that solve real-world problems. My journey in software development started with a fascination for how things work under the hood. Today, I combine that curiosity with practical experience in modern web technologies to build solutions that users love.",
-        "extraInfo": "When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.",
-        "location": "📍 Location",
-        "availability": "📧 Availability",
-        "viewCV": "View CV",
-        "hideCV": "Hide CV",
-        "downloadPrintCV": "Download / Print CV"
-    },
-    "values": {
-        "titleCore": "Core",
-        "titleHighlight": "Values",
-        "subtitle": "The principles that guide my approach to software development",
-        "items": {
-            "cleanCode": {
-                "title": "Clean Code",
-                "description": "Writing maintainable, well-documented code that stands the test of time"
-            },
-            "innovation": {
-                "title": "Innovation",
-                "description": "Constantly exploring new technologies and approaches to solve problems"
-            },
-            "userFocused": {
-                "title": "User-Focused",
-                "description": "Creating solutions that prioritize user experience and accessibility"
-            },
-            "collaboration": {
-                "title": "Collaboration",
-                "description": "Building strong relationships and working effectively in diverse teams"
-            }
-        }
-    },
-    "experience": {
-        "titlePart1": "Professional",
-        "titlePart2": "Journey",
-        "subtitle": "Key roles and projects that have shaped my career"
-    },
-    "education": {
-        "title": "Education",
-        "titleHighlight": "Learning",
-        "subtitle": "Continuous growth through formal education and hands-on learning"
-    },
-    "skills": {
-        "title": "Skills",
-        "titleHighlight": "Expertise",
-        "subtitle": "A comprehensive toolkit built through hands-on experience and continuous learning"
-    },
-    "projects": {
-        "portfolio": "Portfolio",
-        "featured": "Featured",
-        "featuredHighlight": "Projects",
-        "subtitle": "Explore my complete portfolio of projects, from enterprise solutions to innovative tools. Each project represents a unique challenge and a learning experience.",
-        "filter": "Filter:",
-        "noProjects": "No projects found in this category.",
-        "keyFeatures": "Key Features:",
-        "viewProject": "View Project"
-    },
-    "certifications": {
-        "title": "Certifications",
-        "titleHighlight": "Achievements",
-        "subtitle": "Professional certifications and recognized achievements"
-    },
-    "languages": {
-        "title": "Languages",
-        "titleHighlight": "Communication",
-        "subtitle": "Spoken languages and communication proficiency"
-    },
-    "contact": {
-        "title": "Let's",
-        "titleHighlight": "Connect",
-        "subtitle": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
-        "email": "Email",
-        "phone": "Phone",
-        "connectLinkedin": "Connect on LinkedIn",
-        "form": {
-            "name": "Name",
-            "email": "Email",
-            "subject": "Subject",
-            "message": "Message",
-            "namePlaceholder": "Your name",
-            "emailPlaceholder": "you@example.com",
-            "subjectPlaceholder": "What is this about?",
-            "messagePlaceholder": "Tell me about your project or question...",
-            "submit": "Send message",
-            "sending": "Sending...",
-            "sendSuccess": "Message sent. I will get back to you soon.",
-            "sendError": "Could not send your message.",
-            "validationError": "Please fill out all fields correctly.",
-            "notConfigured": "Contact form endpoint is not configured.",
-            "emailDirect": "Email me directly"
-        }
-    },
-    "cv": {
-        "professionalSummary": "Professional Summary",
-        "experience": "Professional Experience",
-        "education": "Education",
-        "skills": "Technical Skills",
-        "certifications": "Certifications",
-        "languages": "Languages",
-        "referencesAvailable": "References available upon request"
+  "language": "English",
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "portfolio": "Portfolio",
+    "getInTouch": "Get in Touch",
+    "viewProjects": "View Projects"
+  },
+  "about": {
+    "title": "About Me",
+    "heading": "Passionate About",
+    "headingHighlight": "Building Solutions",
+    "whoIAm": "Who I Am",
+    "bio": "Hi! I'm Fredrik, a fullstack developer based in Stockholm, Sweden. I specialize in creating elegant, high-performing web applications that solve real-world problems. My journey in software development started with a fascination for how things work under the hood. Today, I combine that curiosity with practical experience in modern web technologies to build solutions that users love.",
+    "extraInfo": "When I'm not coding, you'll usually find me exploring new technologies, learning something new, or spending time with friends and family.",
+    "location": "📍 Location",
+    "availability": "📧 Availability",
+    "viewCV": "View CV",
+    "hideCV": "Hide CV",
+    "downloadPrintCV": "Download / Print CV"
+  },
+  "values": {
+    "titleCore": "Core",
+    "titleHighlight": "Values",
+    "subtitle": "The principles that guide my approach to software development",
+    "items": {
+      "cleanCode": {
+        "title": "Clean Code",
+        "description": "Writing maintainable, well-documented code that stands the test of time"
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "Constantly exploring new technologies and approaches to solve problems"
+      },
+      "userFocused": {
+        "title": "User-Focused",
+        "description": "Creating solutions that prioritize user experience and accessibility"
+      },
+      "collaboration": {
+        "title": "Collaboration",
+        "description": "Building strong relationships and working effectively in diverse teams"
+      }
     }
+  },
+  "experience": {
+    "titlePart1": "Professional",
+    "titlePart2": "Journey",
+    "subtitle": "Key roles and projects that have shaped my career"
+  },
+  "education": {
+    "title": "Education",
+    "titleHighlight": "Learning",
+    "subtitle": "Continuous growth through formal education and hands-on learning"
+  },
+  "skills": {
+    "title": "Skills",
+    "titleHighlight": "Expertise",
+    "subtitle": "A comprehensive toolkit built through hands-on experience and continuous learning"
+  },
+  "projects": {
+    "portfolio": "Portfolio",
+    "featured": "Featured",
+    "featuredHighlight": "Projects",
+    "subtitle": "Explore my complete portfolio of projects, from enterprise solutions to innovative tools. Each project represents a unique challenge and a learning experience.",
+    "filter": "Filter:",
+    "noProjects": "No projects found in this category.",
+    "keyFeatures": "Key Features:",
+    "viewProject": "View Project"
+  },
+  "certifications": {
+    "title": "Certifications",
+    "titleHighlight": "Achievements",
+    "subtitle": "Professional certifications and recognized achievements"
+  },
+  "languages": {
+    "title": "Languages",
+    "titleHighlight": "Communication",
+    "subtitle": "Spoken languages and communication proficiency"
+  },
+  "contact": {
+    "title": "Let's",
+    "titleHighlight": "Connect",
+    "subtitle": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
+    "email": "Email",
+    "phone": "Phone",
+    "connectLinkedin": "Connect on LinkedIn",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "you@example.com",
+      "subjectPlaceholder": "What is this about?",
+      "messagePlaceholder": "Tell me about your project or question...",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "sendSuccess": "Message sent. I will get back to you soon.",
+      "sendError": "Could not send your message.",
+      "validationError": "Please fill out all fields correctly.",
+      "notConfigured": "Contact form endpoint is not configured.",
+      "emailDirect": "Email me directly"
+    }
+  },
+  "cv": {
+    "professionalSummary": "Professional Summary",
+    "experience": "Professional Experience",
+    "education": "Education",
+    "skills": "Technical Skills",
+    "certifications": "Certifications",
+    "languages": "Languages",
+    "referencesAvailable": "References available upon request"
+  }
 }
