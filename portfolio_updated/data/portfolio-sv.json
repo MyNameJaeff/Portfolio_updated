@@ -1,325 +1,288 @@
 {
-    "personal": {
-        "name": "Fredrik Andersson",
-        "title": "Fullstack-utvecklare",
-        "tagline": "Fullstack-utvecklare som älskar att bygga saker som faktiskt fungerar. Ren kod, praktiska lösningar och alltid nyfiken på att lära mig mer.",
-        "location": "Stockholm, Sverige",
-        "email": "fredrik04@hotmail.com",
-        "phone": "073 995 97 84",
-        "bio": "Hej! Jag är Fredrik, en fullstack-utvecklare från Stockholm. Jag bygger webbappar från A till Ö - både frontend och backend. Började programmeringen för att förstå hur allt fungerar, och nu jobbar jag med det på riktigt. Gillar att skapa gränssnitt som är snygga och responsiva, och backend som är stabil och snabb. Dessutom tycker jag det är viktigt att skriva kod som andra faktiskt orkar läsa och underhålla.",
-        "availability": "Öppen för nya projekt",
-        "social": {
-            "github": "https://github.com/MyNameJaeff",
-            "linkedin": "https://www.linkedin.com/in/fredrik-andersson-2006412aa/?locale=sv_SE",
-            "email": "mailto:fredrik04@hotmail.com"
-        }
+  "personal": {
+    "name": "Fredrik Andersson",
+    "title": "Fullstack-utvecklare",
+    "tagline": "Fullstack-utvecklare som bygger snabba och skalbara system. Fokus på ren kod, prestanda och lösningar som faktiskt används.",
+    "location": "Stockholm, Sverige",
+    "email": "fredrik04@hotmail.com",
+    "phone": "073 995 97 84",
+    "bio": "Hej! Jag är Fredrik, en fullstack-utvecklare från Stockholm. Jag bygger webbapplikationer från frontend till backend med fokus på prestanda, skalbarhet och användarvänlighet. Jag har erfarenhet av att arbeta med realtidsdata och moderna teknologier som React, TypeScript och Rust. Jag tycker om att lösa problem, bygga stabila system och skriva kod som är lätt att förstå och vidareutveckla.",
+    "availability": "Öppen för nya projekt",
+    "social": {
+      "github": "https://github.com/MyNameJaeff",
+      "linkedin": "https://www.linkedin.com/in/fredrik-andersson-2006412aa/?locale=sv_SE",
+      "email": "mailto:fredrik04@hotmail.com"
+    }
+  },
+  "skills": {
+    "frontend": {
+      "title": "Frontend",
+      "icon": "Code2",
+      "color": "from-blue-500 to-cyan-500",
+      "skills": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
     },
-    "skills": {
-        "frontend": {
-            "title": "Frontend",
-            "icon": "Code2",
-            "color": "from-blue-500 to-cyan-500",
-            "skills": [
-                "React",
-                "Next.js",
-                "TypeScript",
-                "Tailwind CSS",
-                "HTML",
-                "CSS",
-                "JavaScript"
-            ]
-        },
-        "backend": {
-            "title": "Backend",
-            "icon": "Database",
-            "color": "from-green-500 to-emerald-500",
-            "skills": [
-                "C#",
-                "Rust",
-                "PostgreSQL",
-                "Node.js",
-                "Express",
-                "PHP",
-                "MySQL",
-                "Azure",
-                "Firebase"
-            ]
-        },
-        "devops": {
-            "title": "DevOps",
-            "icon": "Cloud",
-            "color": "from-purple-500 to-pink-500",
-            "skills": [
-                "Docker",
-                "CI/CD",
-                "Git"
-            ]
-        },
-        "tools": {
-            "title": "Verktyg",
-            "icon": "Wrench",
-            "color": "from-orange-500 to-red-500",
-            "skills": [
-                "VS Code",
-                "Visual Studio",
-                "Figma",
-                "Postman",
-                "GitHub"
-            ]
-        },
-        "softSkills": {
-            "title": "Mjuka kunskaper",
-            "icon": "Users",
-            "color": "from-indigo-500 to-purple-500",
-            "skills": [
-                "Problemlösning",
-                "Samarbete",
-                "Kommunikation",
-                "Arbeta i team",
-                "Arbeta självständigt",
-                "Agile"
-            ]
-        },
-        "languages": {
-            "title": "Programmeringsspråk",
-            "icon": "Languages",
-            "color": "from-yellow-500 to-amber-500",
-            "skills": [
-                "JavaScript",
-                "TypeScript",
-                "Rust",
-                "SQL",
-                "C#",
-                "HTML",
-                "CSS",
-                "PHP"
-            ]
-        }
+    "backend": {
+      "title": "Backend",
+      "icon": "Database",
+      "color": "from-green-500 to-emerald-500",
+      "skills": [
+        "C#",
+        "Rust",
+        "PostgreSQL",
+        "Node.js",
+        "Express",
+        "PHP",
+        "MySQL",
+        "Azure",
+        "Firebase"
+      ]
     },
-    "experience": [
-        {
-            "logo": "/companyLogos/coneqt.png",
-            "title": "Praktikant hos Coneqt",
-            "company": "Coneqt",
-            "period": "2026-02 -> Nutid",
-            "location": "Stockholm, Sverige",
-            "description": "Praktikant på Coneqt - en marknadsplats för logistik och transporter. Jobbar med att bygga ett system som hjälper företag att hitta rätt transportörer, optimera leveranser och effektivisera hela kedjan med AI och modern teknik.",
-            "responsibilities": [
-                "Frontend-utveckling med React och TypeScript",
-                "Bidrar till logistikplattformen",
-                "Realtidsoptimering av leveranser",
-                "Integration med TMS-system",
-                "Ser till att plattformen är snabb och skalbar"
-            ],
-            "skills": [
-                "React",
-                "Rust",
-                "PostgreSQL",
-                "Tailwind CSS",
-                "Docker"
-            ]
-        },
-        {
-            "logo": "/companyLogos/aveno.png",
-            "title": "Fullstack-utvecklare",
-            "company": "Aveno",
-            "period": "2025-10 -> Nutid",
-            "location": "Stockholm, Sverige",
-            "description": "Hjälpte till med att bygga Aveno - en CRM och projektledningsplattform från grunden. Ansvarig för en del av frontendutveckling och var medverkande i backend-arkitekturen.",
-            "responsibilities": [
-                "Frontend-utveckling med React och TypeScript",
-                "Backend-arkitektur med Rust",
-                "Realtidsfunktioner och datasynkronisering",
-                "Samarbetar nära med ett starkt team",
-                "Ser till att appen är snabb och kan växa med kunderna"
-            ],
-            "skills": [
-                "React",
-                "Rust",
-                "PostgreSQL",
-                "Tailwind CSS",
-                "Docker"
-            ]
-        }
-    ],
-    "education": [
-        {
-            "degree": "Yrkesexamen i Fullstack-utveckling C# .NET",
-            "institution": "ChasAcademy",
-            "period": "2024 -> 2026",
-            "location": "Stockholm, Sverige",
-            "description": "Yrkesutbildning i fullstack-utveckling med C# och .NET. Jag lärde mig hela kedjan från frontend och backend till databaser och arbete i riktiga projekt. Har byggt en stabil grund i webbutveckling och fått praktisk erfarenhet genom projekt som faktiskt löser problem, bland annat under min praktik på Coneqt och Aveno.",
-            "skills": [
-                "C# .NET",
-                "ASP.NET",
-                "Entity Framework",
-                "SQL Server",
-                "React",
-                "TypeScript",
-                "Tailwind CSS",
-                "Frontendutveckling",
-                "Versionskontroll med Git",
-                "Agile-metoder",
-                "Grupprojekt",
-                "Problemlösningsförmåga"
-            ]
-        },
-        {
-            "degree": "Tekniskt förberedande år i IT & Medieteknik",
-            "institution": "NTI Södertörn",
-            "period": "2023 -> 2024",
-            "location": "Stockholm, Sverige",
-            "description": "Förberedande år inom IT och media. Mer utmanande programmering, webbutveckling och IT-grunder. Gav mig en stabil grund i programmering och IT som jag byggde vidare på i yrkesutbildningen.",
-            "skills": [
-                "React",
-                "JavaScript",
-                "HTML & CSS",
-                "Versionskontroll med Git",
-                "Grupprojekt",
-                "Problemlösningsförmåga"
-            ]
-        },
-        {
-            "degree": "Gymnasieexamen i Informationsteknik",
-            "institution": "NTI Södertörn",
-            "period": "2020 -> 2023",
-            "location": "Stockholm, Sverige",
-            "description": "Gymnasieutbildning inom IT och media. Programmering, nätverk, webbutveckling och mycket mer. Det var här jag fick min första riktiga kontakt med programmering och bestämde mig för att satsa vidare.",
-            "skills": [
-                "C#",
-                "Python",
-                "Webbutveckling",
-                "Grundläggande nätverk",
-                "IT-projektledning",
-                "Matematik",
-                "Fysik",
-                "Engelska"
-            ]
-        }
-    ],
-    "values": [
-        {
-            "icon": "Code2",
-            "title": "Ren kod",
-            "description": "Kod som är lätt att läsa och underhålla. Inte för min egen skull, utan för nästa person som måste jobba med den."
-        },
-        {
-            "icon": "Lightbulb",
-            "title": "Nyfiken",
-            "description": "Alltid intresserad av nya verktyg och tekniker. Inte för att de är nya, utan för att de faktiskt löser problem bättre."
-        },
-        {
-            "icon": "Target",
-            "title": "Användare först",
-            "description": "En app kan ha världens coolaste kod, men om den är jobbig att använda spelar det ingen roll."
-        },
-        {
-            "icon": "Users",
-            "title": "Bra teamwork",
-            "description": "Gillar att jobba med andra, dela kunskap och bygga något tillsammans som är större än summan av delarna."
-        }
-    ],
-    "projects": [
-        {
-            "id": "Coneqt",
-            "title": "'Coneqt' en marknadsplats för logistik och transporter",
-            "shortDescription": "En logistik- och transportmarknadsplats som kopplar samman avsändare med transportörer, optimerar leveranser och effektiviserar flöden.",
-            "description": "Coneqt är en marknadsplats för logistik och transporter som kopplar samman avsändare med transportörer. Plattformen optimerar leveranser, effektiviserar arbetsflöden och erbjuder spårning samt analys i realtid. Byggd med React, Rust, PostgreSQL, Tailwind CSS och Docker.",
-            "longDescription": "Coneqt är en marknadsplats för logistik och transporter som kopplar samman avsändare med transportörer. Plattformen optimerar leveranser, effektiviserar arbetsflöden och erbjuder spårning samt analys i realtid. Byggd med React, Rust, PostgreSQL, Tailwind CSS och Docker.",
-            "tags": [
-                "React",
-                "Tailwind CSS",
-                "Rust",
-                "PostgreSQL"
-            ],
-            "category": "Logistik",
-            "image": "/projectImages/Coneqt.png",
-            "link": "https://coneqt.io/",
-            "linkedIn": "https://www.linkedin.com/company/coneqt1/",
-            "features": [
-                "Matchning mellan avsändare och transportörer",
-                "Spårning av leveranser i realtid",
-                "Ruttoptimering",
-                "Integration med TMS-system",
-                "Analysdashboard"
-            ],
-            "featured": true
-        },
-        {
-            "id": "aveno",
-            "title": "'Aveno' en CRM- och projektledningsplattform",
-            "shortDescription": "En CRM och projektledningsplattform som hjälper företag att hålla koll på kundrelationer, projekt och teamsamarbete.",
-            "description": "Aveno är en fullständig CRM-lösning för att hantera kundrelationer, spåra projekt och hålla reda på teamsamarbete. Med projektuppföljning, kundhantering och analys på ett ställe.",
-            "longDescription": "Aveno är en CRM-plattform för små och större företag. Här kan man hantera kundrelationer, spåra vad som händer i projekten, samarbeta med sitt team och få överblick över affärsmetriker. Snabbt gränssnitt, realtidsuppdateringar och integrationer med verktyg du redan använder.",
-            "tags": [
-                "React",
-                "Tailwind CSS",
-                "Rust",
-                "PostgreSQL"
-            ],
-            "category": "CRM-System",
-            "image": "/projectImages/Aveno.png",
-            "linkedIn": "https://www.linkedin.com/company/aveno-crm/",
-            "features": [
-                "Kundrelationshantering",
-                "Projektuppföljning och hantering",
-                "Samarbetsverktyg för team",
-                "Analys och rapportering",
-                "API-integrationer"
-            ],
-            "featured": true
-        },
-        {
-            "id": "bamf",
-            "title": "'BAMF' en E-handelsplattform",
-            "shortDescription": "En e-handelsplattform för att sälja online. Enkelt att hantera lager, hantera beställningar och få betalt.",
-            "description": "BAMF är en e-handelsplattform som gör det enkelt att starta och driva en webbutik. Lagerhantering, beställningshantering och betalsystem på ett ställe.",
-            "longDescription": "BAMF är en e-handelslösning som är snygg och faktiskt funktionell. Hantera produkter, ta emot beställningar, ta betalt och se hur det går. Byggt för att vara snabbt och enkelt att jobba med.",
-            "tags": [
-                "C#",
-                "TypeScript",
-                "React",
-                "Tailwind CSS"
-            ],
-            "category": "E-handel",
-            "image": "/projectImages/BAMF.png",
-            "github": "https://github.com/BAMF-1",
-            "features": [
-                "Produktkataloghantering",
-                "Shoppingvagn och kassa",
-                "Orderuppföljning",
-                "Lagerhantering",
-                "Betalningshantering"
-            ],
-            "featured": true
-        }
-    ],
-    "certifications": [
-        {
-            "name": "Information Technology Specialist i HTML och CSS",
-            "issuer": "Certiport",
-            "date": "Jan 2023",
-            "credentialId": "Credential ID 6RQp-DwVw / Student-id: 90079336 / DoB: 7 Dec 2004",
-            "image": "/certificates/html_and_css-cert.jpg",
-            "verifyUrl": "https://www.certiport.com/Portal/Pages/CredentialVerification.aspx"
-        },
-        {
-            "name": "Information Technology Specialist i JavaScript",
-            "issuer": "Certiport",
-            "date": "Jan 2023",
-            "credentialId": "Credential ID wvp2H-H94E / Student-Id: 90079336 / DoB: 7 Dec 2004",
-            "image": "/certificates/javascript-cert.jpg",
-            "verifyUrl": "https://www.certiport.com/Portal/Pages/CredentialVerification.aspx"
-        }
-    ],
-    "spokenLanguages": [
-        {
-            "language": "Svenska",
-            "proficiency": "Modersmål"
-        },
-        {
-            "language": "Engelska",
-            "proficiency": "Flytande"
-        }
-    ]
+    "devops": {
+      "title": "DevOps",
+      "icon": "Cloud",
+      "color": "from-purple-500 to-pink-500",
+      "skills": ["Docker", "CI/CD", "Git"]
+    },
+    "tools": {
+      "title": "Verktyg",
+      "icon": "Wrench",
+      "color": "from-orange-500 to-red-500",
+      "skills": ["VS Code", "Visual Studio", "Figma", "Postman", "GitHub"]
+    },
+    "softSkills": {
+      "title": "Mjuka kunskaper",
+      "icon": "Users",
+      "color": "from-indigo-500 to-purple-500",
+      "skills": [
+        "Problemlösning",
+        "Samarbete",
+        "Kommunikation",
+        "Teamarbete",
+        "Självständigt arbete",
+        "Agile"
+      ]
+    },
+    "languages": {
+      "title": "Programmeringsspråk",
+      "icon": "Languages",
+      "color": "from-yellow-500 to-amber-500",
+      "skills": [
+        "JavaScript",
+        "TypeScript",
+        "Rust",
+        "SQL",
+        "C#",
+        "HTML",
+        "CSS",
+        "PHP"
+      ]
+    }
+  },
+  "experience": [
+    {
+      "logo": "/companyLogos/coneqt.png",
+      "title": "Praktikant hos Coneqt",
+      "company": "Coneqt",
+      "period": "2026-02 -> Nutid",
+      "location": "Stockholm, Sverige",
+      "description": "Praktikant på Coneqt - en marknadsplats för logistik och transporter. Jobbar med att bygga ett system som hjälper företag att hitta rätt transportörer, optimera leveranser och effektivisera hela kedjan med AI och modern teknik.",
+      "responsibilities": [
+        "Utvecklade delar av frontend i React och TypeScript",
+        "Bidrog till backend-arkitektur i Rust",
+        "Implementerade realtidsfunktioner och datasynkronisering",
+        "Samarbetade nära med teamet för att designa och utveckla nya funktioner",
+        "Säkerställde att systemet är skalbart och responsivt"
+      ],
+      "skills": ["React", "Rust", "PostgreSQL", "Tailwind CSS", "Docker"]
+    },
+    {
+      "logo": "/companyLogos/aveno.png",
+      "title": "Fullstack-utvecklare",
+      "company": "Aveno",
+      "period": "2025-10 -> Nutid",
+      "location": "Stockholm, Sverige",
+      "description": "Hjälpte till med att bygga Aveno - en CRM och projektledningsplattform från grunden. Ansvarig för en del av frontendutveckling och var medverkande i backend-arkitekturen.",
+      "responsibilities": [
+        "Frontend-utveckling med React och TypeScript",
+        "Backend-arkitektur med Rust",
+        "Realtidsfunktioner och datasynkronisering",
+        "Samarbetar nära med ett starkt team",
+        "Ser till att appen är snabb och kan växa med kunderna"
+      ],
+      "skills": ["React", "Rust", "PostgreSQL", "Tailwind CSS", "Docker"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Yrkesexamen i Fullstack-utveckling C# .NET",
+      "institution": "ChasAcademy",
+      "period": "2024 -> 2026",
+      "location": "Stockholm, Sverige",
+      "description": "Yrkesutbildning i fullstack-utveckling med C# och .NET. Jag lärde mig hela kedjan från frontend och backend till databaser och arbete i riktiga projekt. Har byggt en stabil grund i webbutveckling och fått praktisk erfarenhet genom projekt som faktiskt löser problem, bland annat under min praktik på Coneqt och Aveno.",
+      "skills": [
+        "C# .NET",
+        "ASP.NET",
+        "Entity Framework",
+        "SQL Server",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Frontendutveckling",
+        "Versionskontroll med Git",
+        "Agile-metoder",
+        "Grupprojekt",
+        "Problemlösningsförmåga"
+      ]
+    },
+    {
+      "degree": "Tekniskt förberedande år i IT & Medieteknik",
+      "institution": "NTI Södertörn",
+      "period": "2023 -> 2024",
+      "location": "Stockholm, Sverige",
+      "description": "Förberedande år inom IT och media. Mer utmanande programmering, webbutveckling och IT-grunder. Gav mig en stabil grund i programmering och IT som jag byggde vidare på i yrkesutbildningen.",
+      "skills": [
+        "React",
+        "JavaScript",
+        "HTML & CSS",
+        "Versionskontroll med Git",
+        "Grupprojekt",
+        "Problemlösningsförmåga"
+      ]
+    },
+    {
+      "degree": "Gymnasieexamen i Informationsteknik",
+      "institution": "NTI Södertörn",
+      "period": "2020 -> 2023",
+      "location": "Stockholm, Sverige",
+      "description": "Gymnasieutbildning inom IT och media. Programmering, nätverk, webbutveckling och mycket mer. Det var här jag fick min första riktiga kontakt med programmering och bestämde mig för att satsa vidare.",
+      "skills": [
+        "C#",
+        "Python",
+        "Webbutveckling",
+        "Grundläggande nätverk",
+        "IT-projektledning",
+        "Matematik",
+        "Fysik",
+        "Engelska"
+      ]
+    }
+  ],
+  "values": [
+    {
+      "icon": "Code2",
+      "title": "Ren kod",
+      "description": "Kod som är lätt att läsa och underhålla. Inte för min egen skull, utan för nästa person som måste jobba med den."
+    },
+    {
+      "icon": "Lightbulb",
+      "title": "Nyfiken",
+      "description": "Alltid intresserad av nya verktyg och tekniker. Inte för att de är nya, utan för att de faktiskt löser problem bättre."
+    },
+    {
+      "icon": "Target",
+      "title": "Användare först",
+      "description": "En app kan ha världens coolaste kod, men om den är jobbig att använda spelar det ingen roll."
+    },
+    {
+      "icon": "Users",
+      "title": "Bra teamwork",
+      "description": "Gillar att jobba med andra, dela kunskap och bygga något tillsammans som är större än summan av delarna."
+    }
+  ],
+  "projects": [
+    {
+      "id": "Coneqt",
+      "title": "'Coneqt' en marknadsplats för logistik och transporter",
+      "shortDescription": "En logistik- och transportmarknadsplats som kopplar samman avsändare med transportörer, optimerar leveranser och effektiviserar flöden.",
+      "description": "Coneqt är en marknadsplats för logistik och transporter som kopplar samman avsändare med transportörer. Plattformen optimerar leveranser, effektiviserar arbetsflöden och erbjuder spårning samt analys i realtid. Byggd med React, Rust, PostgreSQL, Tailwind CSS och Docker.",
+      "longDescription": "Coneqt är en marknadsplats för logistik och transporter som kopplar samman avsändare med transportörer. Plattformen optimerar leveranser, effektiviserar arbetsflöden och erbjuder spårning samt analys i realtid. Byggd med React, Rust, PostgreSQL, Tailwind CSS och Docker.\n\nMin roll: Jag arbetade med frontend i React och TypeScript samt bidrog till backend i Rust. Fokus låg på realtidsdata, prestanda och att utveckla stabila funktioner i ett produktionssystem.",
+      "tags": ["React", "Tailwind CSS", "Rust", "PostgreSQL"],
+      "category": "Logistik",
+      "image": "/projectImages/Coneqt.png",
+      "link": "https://coneqt.io/",
+      "linkedIn": "https://www.linkedin.com/company/coneqt1/",
+      "features": [
+        "Matchning mellan avsändare och transportörer",
+        "Spårning av leveranser i realtid",
+        "Ruttoptimering",
+        "Integration med TMS-system",
+        "Analysdashboard"
+      ],
+      "featured": true
+    },
+    {
+      "id": "aveno",
+      "title": "'Aveno' en CRM- och projektledningsplattform",
+      "shortDescription": "En CRM och projektledningsplattform som hjälper företag att hålla koll på kundrelationer, projekt och teamsamarbete.",
+      "description": "Aveno är en fullständig CRM-lösning för att hantera kundrelationer, spåra projekt och hålla reda på teamsamarbete. Med projektuppföljning, kundhantering och analys på ett ställe.",
+      "longDescription": "Aveno är en CRM-plattform för att hantera kundrelationer, projekt och teamsamarbete. Plattformen erbjuder realtidsuppdateringar, analys och integrationer i ett modernt gränssnitt.\n\nMin roll: Jag arbetade med både frontend och backend, där jag utvecklade funktioner i React och TypeScript samt bidrog till backend-arkitektur i Rust, med fokus på realtidsdata och systemets skalbarhet.",
+      "tags": ["React", "Tailwind CSS", "Rust", "PostgreSQL"],
+      "category": "CRM-System",
+      "image": "/projectImages/Aveno.png",
+      "linkedIn": "https://www.linkedin.com/company/aveno-crm/",
+      "features": [
+        "Kundrelationshantering",
+        "Projektuppföljning och hantering",
+        "Samarbetsverktyg för team",
+        "Analys och rapportering",
+        "API-integrationer"
+      ],
+      "featured": true
+    },
+    {
+      "id": "bamf",
+      "title": "'BAMF' en E-handelsplattform",
+      "shortDescription": "En e-handelsplattform för att sälja online. Enkelt att hantera lager, hantera beställningar och få betalt.",
+      "description": "BAMF är en e-handelsplattform som gör det enkelt att starta och driva en webbutik. Lagerhantering, beställningshantering och betalsystem på ett ställe.",
+      "longDescription": "BAMF är en e-handelsplattform som gör det enkelt att starta och driva en webbutik med funktioner för produkt-, order- och betalningshantering.\n\nMin roll: Jag utvecklade både frontend och backend med fokus på användarvänlighet, struktur och att bygga en stabil och lättanvänd plattform.",
+      "tags": ["C#", "TypeScript", "React", "Tailwind CSS"],
+      "category": "E-handel",
+      "image": "/projectImages/BAMF.png",
+      "github": "https://github.com/BAMF-1",
+      "features": [
+        "Produktkataloghantering",
+        "Shoppingvagn och kassa",
+        "Orderuppföljning",
+        "Lagerhantering",
+        "Betalningshantering"
+      ],
+      "featured": true
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Information Technology Specialist i HTML och CSS",
+      "issuer": "Certiport",
+      "date": "Jan 2023",
+      "credentialId": "Credential ID 6RQp-DwVw / Student-id: 90079336 / DoB: 7 Dec 2004",
+      "image": "/certificates/html_and_css-cert.jpg",
+      "verifyUrl": "https://www.certiport.com/Portal/Pages/CredentialVerification.aspx"
+    },
+    {
+      "name": "Information Technology Specialist i JavaScript",
+      "issuer": "Certiport",
+      "date": "Jan 2023",
+      "credentialId": "Credential ID wvp2H-H94E / Student-Id: 90079336 / DoB: 7 Dec 2004",
+      "image": "/certificates/javascript-cert.jpg",
+      "verifyUrl": "https://www.certiport.com/Portal/Pages/CredentialVerification.aspx"
+    }
+  ],
+  "spokenLanguages": [
+    {
+      "language": "Svenska",
+      "proficiency": "Modersmål"
+    },
+    {
+      "language": "Engelska",
+      "proficiency": "Flytande"
+    }
+  ]
 }

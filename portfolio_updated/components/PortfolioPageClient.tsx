@@ -221,6 +221,14 @@ function HeroSection({ personal, t }: { personal: Personal; t: Translator }) {
   const [firstName, ...rest] = personal.name.split(" ");
   const lastName = rest.join(" ");
 
+  const handleSectionLinkClick = useCallback((event: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    event.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
+
   return (
     <section id="home" className="flex min-h-screen items-center justify-center px-4 sm:px-6 py-12 sm:py-20 print:hidden">
       <div className="max-w-4xl w-full">
@@ -246,6 +254,7 @@ function HeroSection({ personal, t }: { personal: Personal; t: Translator }) {
         <div className="flex flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-12">
           <a
             href="#contact"
+            onClick={(event) => handleSectionLinkClick(event, "contact")}
             className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-primary text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:opacity-90 hover:-translate-y-0.5 shadow-lg text-sm sm:text-base"
           >
             {t("hero.getInTouch", "Get in Touch")}
@@ -253,6 +262,7 @@ function HeroSection({ personal, t }: { personal: Personal; t: Translator }) {
           </a>
           <a
             href="#projects"
+            onClick={(event) => handleSectionLinkClick(event, "projects")}
             className="group px-6 sm:px-8 py-3 sm:py-4 bg-secondary text-secondary-foreground font-semibold rounded-lg transition-all duration-300 hover:bg-accent hover:text-accent-foreground border border-border text-sm sm:text-base"
           >
             {t("hero.viewProjects", "View Projects")}
@@ -890,6 +900,7 @@ function ProjectCard({ project, index, t }: { project: Project; index: number; t
           src={project.image}
           alt={project.title}
           fill
+          sizes="100%"
           className="object-cover group-hover:scale-105 transition-transform duration-500"
         />
         <div className="absolute top-3 sm:top-4 left-3 sm:left-4 px-2.5 sm:px-3 py-1 bg-background/80 backdrop-blur-sm rounded-full text-xs font-semibold text-primary border border-border">
